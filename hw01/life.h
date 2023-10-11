@@ -1,7 +1,7 @@
 #pragma once
 
-#include "life.h"
 #include <stdlib.h>
+#include "life.h"
 
 typedef enum State { K_DEAD = 0, K_ALIVE = 1 } State;
 
@@ -13,7 +13,8 @@ static inline void init_gen(State *gen, int width, int height, int density) {
     }
 }
 
-static inline void calc_next_gen(State *curr_gen, State *next_gen, int width, int height) {
+static inline void
+calc_next_gen(State *curr_gen, State *next_gen, int width, int height) {
     for (int x = 0; x < width; ++x) {
         for (int y = 0; y < height; ++y) {
             int alive = 0;
