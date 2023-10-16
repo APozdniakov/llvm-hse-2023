@@ -1,12 +1,16 @@
 include(FetchContent)
-set(FETCHCONTENT_BASE_DIR ${CMAKE_CURRENT_BINARY_DIR}/third_party)
 
 FetchContent_Declare(
   csfml
   GIT_REPOSITORY https://github.com/SFML/CSFML.git
   GIT_TAG 2.5.2
 )
-FetchContent_MakeAvailable(csfml)
+
+FetchContent_GetProperties(csfml)
+if(NOT csfml_POPULATED)
+    FetchContent_Populate(csfml)
+    add_subdirectory(${csfml_SOURCE_DIR} ${csfml_BINARY_DIR})
+endif()
 
 add_library(sim STATIC sim.c)
 target_include_directories(sim PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
