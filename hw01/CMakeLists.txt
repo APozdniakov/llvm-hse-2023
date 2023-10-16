@@ -2,23 +2,16 @@ cmake_minimum_required(VERSION 3.16)
 project(hw01 LANGUAGES C)
 
 set(CMAKE_C_STANDARD 11)
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0")
 
-include(FetchContent)
-set(FETCHCONTENT_BASE_DIR ${CMAKE_CURRENT_BINARY_DIR}/third_party)
+add_subdirectory(sim)
+get_target_property(SIM_INCLUDE_DIR sim INCLUDE_DIRECTORIES)
 
-FetchContent_Declare(
-  csfml
-  GIT_REPOSITORY https://github.com/SFML/CSFML.git
-  GIT_TAG 2.5.2
-)
-FetchContent_MakeAvailable(csfml)
+set(SOURCE main.c life.c)
 
-add_executable(${PROJECT_NAME} main.c)
-target_link_libraries(${PROJECT_NAME} PRIVATE csfml-graphics csfml-system csfml-window)
+add_executable(${PROJECT_NAME} ${SOURCE})
+target_include_directories(${PROJECT_NAME} PUBLIC ${SIM_INCLUDE_DIR})
+target_link_libraries(${PROJECT_NAME} PUBLIC sim)
 
-
-set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS} "-flto")
-add_executable(${PROJECT_NAME}-ir main.c)
-target_link_libraries(${PROJECT_NAME}-ir PRIVATE csfml-graphics csfml-system csfml-window)
-target_compile_options(${PROJECT_NAME}-ir PUBLIC -emit-llvm -flto)
+add_library(${PROJECT_NAME}-ir OBJECT ${SOURCE})
+target_include_directories(${PROJECT_NAME}-ir PUBLIC ${SIM_INCLUDE_DIR})
+target_compile_options(${PROJECT_NAME}-ir PUBLIC -S -emit-llvm)
