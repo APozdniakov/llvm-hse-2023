@@ -1,5 +1,5 @@
-#include <stdlib.h>
 #include "life.h"
+#include <stdlib.h>
 #include "sim.h"
 
 enum {
@@ -16,7 +16,8 @@ static void init_gen(State *gen, int width, int height, int density) {
     }
 }
 
-static void calc_next_gen(State *curr_gen, State *next_gen, int width, int height) {
+static void
+calc_next_gen(State *curr_gen, State *next_gen, int width, int height) {
     for (int x = 0; x < width; ++x) {
         for (int y = 0; y < height; ++y) {
             int alive = 0;
