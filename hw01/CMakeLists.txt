@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 project(hw01 LANGUAGES C)
 
 set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_FLAGS_RELEASE "-O2")
 
 add_subdirectory(sim)
 get_target_property(SIM_INCLUDE_DIR sim INCLUDE_DIRECTORIES)

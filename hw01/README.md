@@ -9,7 +9,7 @@ Implementation of the [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Ga
 ```bash
 mkdir build
 cd build
-cmake -DCMAKE_C_COMPILER=<path-to-clang> -DCMAKE_BUILD_TYPE=Debug -G Ninja ..
+cmake -DCMAKE_C_COMPILER=<path-to-clang> -DCMAKE_BUILD_TYPE=Release -G Ninja ..
 ninja -j "$(nproc)"
 ```
 
@@ -21,4 +21,4 @@ ninja -j "$(nproc)"
 
 ### Get LLVM IR
 
-LLVM IR is usually located in `./CmakeFiles/hw01-ir.dir/`
+LLVM IR is located in [`life.ll`](./life.ll)
