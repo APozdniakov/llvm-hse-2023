@@ -1,5 +1,4 @@
 #include "life.h"
-#include <stdlib.h>
 #include "sim.h"
 
 enum {
@@ -25,7 +24,8 @@ calc_next_gen(State *curr_gen, State *next_gen, int width, int height) {
                 for (int dy = -1; dy <= 1; ++dy) {
                     int new_x = x + dx;
                     int new_y = y + dy;
-                    if (abs(dx) + abs(dy) == 1 && 0 <= new_x && new_x < width &&
+                    if (!(dx == 0 && dy == 0) &&
+                        0 <= new_x && new_x < width &&
                         0 <= new_y && new_y < height &&
                         curr_gen[new_x * height + new_y] == K_ALIVE) {
                         alive += 1;
