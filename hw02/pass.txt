@@ -1,0 +1,2567 @@
+STATISTICS start for main
+  call void @app()
+  Uses
+  Operands
+  - declare void @app() #1
+  ret i32 0
+  Uses
+  Operands
+  - i32 0
+STATISTICS end for main
+
+ANALYSIS start for main
+Most frequent patterns (size=1)
+- Top 1 (1 times)
+    call void @app()
+- Top 2 (1 times)
+    ret i32 0
+Most frequent patterns (size=2)
+- Top 1 (1 times)
+    call void @app()
+    ret i32 0
+ANALYSIS end for main
+
+ANALYSIS start for GLOBAL
+Most frequent patterns (size=1)
+- Top 1 (1 times)
+    call void @app()
+- Top 2 (1 times)
+    ret i32 0
+Most frequent patterns (size=2)
+- Top 1 (1 times)
+    call void @app()
+    ret i32 0
+ANALYSIS end for GLOBAL
+
+STATISTICS start for app
+  %1 = alloca [5000 x i32], align 16
+  Uses
+  -   %6 = getelementptr inbounds [5000 x i32], [5000 x i32]* %1, i64 0, i64 0
+  Operands
+  - i32 1
+  %2 = alloca [5000 x i32], align 16
+  Uses
+  -   %7 = getelementptr inbounds [5000 x i32], [5000 x i32]* %2, i64 0, i64 0
+  Operands
+  - i32 1
+  %3 = alloca i32*, align 8
+  Uses
+  -   store i32* %17, i32** %3, align 8
+  -   %16 = load i32*, i32** %3, align 8
+  -   %15 = load i32*, i32** %3, align 8
+  -   %13 = load i32*, i32** %3, align 8
+  -   %8 = load i32*, i32** %3, align 8
+  -   store i32* %6, i32** %3, align 8
+  Operands
+  - i32 1
+  %4 = alloca i32*, align 8
+  Uses
+  -   store i32* %18, i32** %4, align 8
+  -   %17 = load i32*, i32** %4, align 8
+  -   %14 = load i32*, i32** %4, align 8
+  -   store i32* %7, i32** %4, align 8
+  Operands
+  - i32 1
+  %5 = alloca i32*, align 8
+  Uses
+  -   %18 = load i32*, i32** %5, align 8
+  -   store i32* %16, i32** %5, align 8
+  Operands
+  - i32 1
+  %6 = getelementptr inbounds [5000 x i32], [5000 x i32]* %1, i64 0, i64 0
+  Uses
+  -   store i32* %6, i32** %3, align 8
+  Operands
+  -   %1 = alloca [5000 x i32], align 16
+  - i64 0
+  - i64 0
+  store i32* %6, i32** %3, align 8
+  Uses
+  Operands
+  -   %6 = getelementptr inbounds [5000 x i32], [5000 x i32]* %1, i64 0, i64 0
+  -   %3 = alloca i32*, align 8
+  %7 = getelementptr inbounds [5000 x i32], [5000 x i32]* %2, i64 0, i64 0
+  Uses
+  -   store i32* %7, i32** %4, align 8
+  Operands
+  -   %2 = alloca [5000 x i32], align 16
+  - i64 0
+  - i64 0
+  store i32* %7, i32** %4, align 8
+  Uses
+  Operands
+  -   %7 = getelementptr inbounds [5000 x i32], [5000 x i32]* %2, i64 0, i64 0
+  -   %4 = alloca i32*, align 8
+  %8 = load i32*, i32** %3, align 8
+  Uses
+  -   call void @init_gen(i32* noundef %8, i32 noundef 100, i32 noundef 50, i32 noundef 4)
+  Operands
+  -   %3 = alloca i32*, align 8
+  call void @init_gen(i32* noundef %8, i32 noundef 100, i32 noundef 50, i32 noundef 4)
+  Uses
+  Operands
+  -   %8 = load i32*, i32** %3, align 8
+  - i32 100
+  - i32 50
+  - i32 4
+  - ; Function Attrs: noinline nounwind optnone uwtable
+  - define internal void @init_gen(i32* noundef %0, i32 noundef %1, i32 noundef %2, i32 noundef %3) #0 {
+  -   %5 = alloca i32*, align 8
+  -   %6 = alloca i32, align 4
+  -   %7 = alloca i32, align 4
+  -   %8 = alloca i32, align 4
+  -   %9 = alloca i32, align 4
+  -   %10 = alloca i32, align 4
+  -   store i32* %0, i32** %5, align 8
+  -   store i32 %1, i32* %6, align 4
+  -   store i32 %2, i32* %7, align 4
+  -   store i32 %3, i32* %8, align 4
+  -   store i32 0, i32* %9, align 4
+  -   br label %11
+  - 
+  - 11:                                               ; preds = %39, %4
+  -   %12 = load i32, i32* %9, align 4
+  -   %13 = load i32, i32* %6, align 4
+  -   %14 = icmp slt i32 %12, %13
+  -   br i1 %14, label %15, label %42
+  - 
+  - 15:                                               ; preds = %11
+  -   store i32 0, i32* %10, align 4
+  -   br label %16
+  - 
+  - 16:                                               ; preds = %35, %15
+  -   %17 = load i32, i32* %10, align 4
+  -   %18 = load i32, i32* %7, align 4
+  -   %19 = icmp slt i32 %17, %18
+  -   br i1 %19, label %20, label %38
+  - 
+  - 20:                                               ; preds = %16
+  -   %21 = call i32 @sim_rand()
+  -   %22 = load i32, i32* %8, align 4
+  -   %23 = srem i32 %21, %22
+  -   %24 = icmp ne i32 %23, 0
+  -   %25 = zext i1 %24 to i64
+  -   %26 = select i1 %24, i32 0, i32 1
+  -   %27 = load i32*, i32** %5, align 8
+  -   %28 = load i32, i32* %9, align 4
+  -   %29 = load i32, i32* %7, align 4
+  -   %30 = mul nsw i32 %28, %29
+  -   %31 = load i32, i32* %10, align 4
+  -   %32 = add nsw i32 %30, %31
+  -   %33 = sext i32 %32 to i64
+  -   %34 = getelementptr inbounds i32, i32* %27, i64 %33
+  -   store i32 %26, i32* %34, align 4
+  -   br label %35
+  - 
+  - 35:                                               ; preds = %20
+  -   %36 = load i32, i32* %10, align 4
+  -   %37 = add nsw i32 %36, 1
+  -   store i32 %37, i32* %10, align 4
+  -   br label %16, !llvm.loop !8
+  - 
+  - 38:                                               ; preds = %16
+  -   br label %39
+  - 
+  - 39:                                               ; preds = %38
+  -   %40 = load i32, i32* %9, align 4
+  -   %41 = add nsw i32 %40, 1
+  -   store i32 %41, i32* %9, align 4
+  -   br label %11, !llvm.loop !9
+  - 
+  - 42:                                               ; preds = %11
+  -   ret void
+  - }
+  br label %9
+  Uses
+  Operands
+  - 
+  - 9:                                                ; preds = %12, %0
+  -   %10 = call i32 @sim_keep_running()
+  -   %11 = icmp ne i32 %10, 0
+  -   br i1 %11, label %12, label %19
+  %10 = call i32 @sim_keep_running()
+  Uses
+  -   %11 = icmp ne i32 %10, 0
+  Operands
+  - declare i32 @sim_keep_running() #1
+  %11 = icmp ne i32 %10, 0
+  Uses
+  -   br i1 %11, label %12, label %19
+  Operands
+  -   %10 = call i32 @sim_keep_running()
+  - i32 0
+  br i1 %11, label %12, label %19
+  Uses
+  Operands
+  -   %11 = icmp ne i32 %10, 0
+  - 
+  - 19:                                               ; preds = %9
+  -   ret void
+  - 
+  - 12:                                               ; preds = %9
+  -   %13 = load i32*, i32** %3, align 8
+  -   %14 = load i32*, i32** %4, align 8
+  -   call void @calc_next_gen(i32* noundef %13, i32* noundef %14, i32 noundef 100, i32 noundef 50)
+  -   %15 = load i32*, i32** %3, align 8
+  -   call void @display_gen(i32* noundef %15, i32 noundef 100, i32 noundef 50)
+  -   %16 = load i32*, i32** %3, align 8
+  -   store i32* %16, i32** %5, align 8
+  -   %17 = load i32*, i32** %4, align 8
+  -   store i32* %17, i32** %3, align 8
+  -   %18 = load i32*, i32** %5, align 8
+  -   store i32* %18, i32** %4, align 8
+  -   br label %9, !llvm.loop !6
+  %13 = load i32*, i32** %3, align 8
+  Uses
+  -   call void @calc_next_gen(i32* noundef %13, i32* noundef %14, i32 noundef 100, i32 noundef 50)
+  Operands
+  -   %3 = alloca i32*, align 8
+  %14 = load i32*, i32** %4, align 8
+  Uses
+  -   call void @calc_next_gen(i32* noundef %13, i32* noundef %14, i32 noundef 100, i32 noundef 50)
+  Operands
+  -   %4 = alloca i32*, align 8
+  call void @calc_next_gen(i32* noundef %13, i32* noundef %14, i32 noundef 100, i32 noundef 50)
+  Uses
+  Operands
+  -   %13 = load i32*, i32** %3, align 8
+  -   %14 = load i32*, i32** %4, align 8
+  - i32 100
+  - i32 50
+  - ; Function Attrs: noinline nounwind optnone uwtable
+  - define internal void @calc_next_gen(i32* noundef %0, i32* noundef %1, i32 noundef %2, i32 noundef %3) #0 {
+  -   %5 = alloca i32*, align 8
+  -   %6 = alloca i32*, align 8
+  -   %7 = alloca i32, align 4
+  -   %8 = alloca i32, align 4
+  -   %9 = alloca i32, align 4
+  -   %10 = alloca i32, align 4
+  -   %11 = alloca i32, align 4
+  -   %12 = alloca i32, align 4
+  -   %13 = alloca i32, align 4
+  -   %14 = alloca i32, align 4
+  -   %15 = alloca i32, align 4
+  -   store i32* %0, i32** %5, align 8
+  -   store i32* %1, i32** %6, align 8
+  -   store i32 %2, i32* %7, align 4
+  -   store i32 %3, i32* %8, align 4
+  -   store i32 0, i32* %9, align 4
+  -   br label %16
+  - 
+  - 16:                                               ; preds = %130, %4
+  -   %17 = load i32, i32* %9, align 4
+  -   %18 = load i32, i32* %7, align 4
+  -   %19 = icmp slt i32 %17, %18
+  -   br i1 %19, label %20, label %133
+  - 
+  - 20:                                               ; preds = %16
+  -   store i32 0, i32* %10, align 4
+  -   br label %21
+  - 
+  - 21:                                               ; preds = %126, %20
+  -   %22 = load i32, i32* %10, align 4
+  -   %23 = load i32, i32* %8, align 4
+  -   %24 = icmp slt i32 %22, %23
+  -   br i1 %24, label %25, label %129
+  - 
+  - 25:                                               ; preds = %21
+  -   store i32 0, i32* %11, align 4
+  -   store i32 -1, i32* %12, align 4
+  -   br label %26
+  - 
+  - 26:                                               ; preds = %78, %25
+  -   %27 = load i32, i32* %12, align 4
+  -   %28 = icmp sle i32 %27, 1
+  -   br i1 %28, label %29, label %81
+  - 
+  - 29:                                               ; preds = %26
+  -   store i32 -1, i32* %13, align 4
+  -   br label %30
+  - 
+  - 30:                                               ; preds = %74, %29
+  -   %31 = load i32, i32* %13, align 4
+  -   %32 = icmp sle i32 %31, 1
+  -   br i1 %32, label %33, label %77
+  - 
+  - 33:                                               ; preds = %30
+  -   %34 = load i32, i32* %9, align 4
+  -   %35 = load i32, i32* %12, align 4
+  -   %36 = add nsw i32 %34, %35
+  -   store i32 %36, i32* %14, align 4
+  -   %37 = load i32, i32* %10, align 4
+  -   %38 = load i32, i32* %13, align 4
+  -   %39 = add nsw i32 %37, %38
+  -   store i32 %39, i32* %15, align 4
+  -   %40 = load i32, i32* %12, align 4
+  -   %41 = icmp eq i32 %40, 0
+  -   br i1 %41, label %42, label %45
+  - 
+  - 42:                                               ; preds = %33
+  -   %43 = load i32, i32* %13, align 4
+  -   %44 = icmp eq i32 %43, 0
+  -   br i1 %44, label %73, label %45
+  - 
+  - 45:                                               ; preds = %42, %33
+  -   %46 = load i32, i32* %14, align 4
+  -   %47 = icmp sle i32 0, %46
+  -   br i1 %47, label %48, label %73
+  - 
+  - 48:                                               ; preds = %45
+  -   %49 = load i32, i32* %14, align 4
+  -   %50 = load i32, i32* %7, align 4
+  -   %51 = icmp slt i32 %49, %50
+  -   br i1 %51, label %52, label %73
+  - 
+  - 52:                                               ; preds = %48
+  -   %53 = load i32, i32* %15, align 4
+  -   %54 = icmp sle i32 0, %53
+  -   br i1 %54, label %55, label %73
+  - 
+  - 55:                                               ; preds = %52
+  -   %56 = load i32, i32* %15, align 4
+  -   %57 = load i32, i32* %8, align 4
+  -   %58 = icmp slt i32 %56, %57
+  -   br i1 %58, label %59, label %73
+  - 
+  - 59:                                               ; preds = %55
+  -   %60 = load i32*, i32** %5, align 8
+  -   %61 = load i32, i32* %14, align 4
+  -   %62 = load i32, i32* %8, align 4
+  -   %63 = mul nsw i32 %61, %62
+  -   %64 = load i32, i32* %15, align 4
+  -   %65 = add nsw i32 %63, %64
+  -   %66 = sext i32 %65 to i64
+  -   %67 = getelementptr inbounds i32, i32* %60, i64 %66
+  -   %68 = load i32, i32* %67, align 4
+  -   %69 = icmp eq i32 %68, 1
+  -   br i1 %69, label %70, label %73
+  - 
+  - 70:                                               ; preds = %59
+  -   %71 = load i32, i32* %11, align 4
+  -   %72 = add nsw i32 %71, 1
+  -   store i32 %72, i32* %11, align 4
+  -   br label %73
+  - 
+  - 73:                                               ; preds = %70, %59, %55, %52, %48, %45, %42
+  -   br label %74
+  - 
+  - 74:                                               ; preds = %73
+  -   %75 = load i32, i32* %13, align 4
+  -   %76 = add nsw i32 %75, 1
+  -   store i32 %76, i32* %13, align 4
+  -   br label %30, !llvm.loop !10
+  - 
+  - 77:                                               ; preds = %30
+  -   br label %78
+  - 
+  - 78:                                               ; preds = %77
+  -   %79 = load i32, i32* %12, align 4
+  -   %80 = add nsw i32 %79, 1
+  -   store i32 %80, i32* %12, align 4
+  -   br label %26, !llvm.loop !11
+  - 
+  - 81:                                               ; preds = %26
+  -   %82 = load i32*, i32** %5, align 8
+  -   %83 = load i32, i32* %9, align 4
+  -   %84 = load i32, i32* %8, align 4
+  -   %85 = mul nsw i32 %83, %84
+  -   %86 = load i32, i32* %10, align 4
+  -   %87 = add nsw i32 %85, %86
+  -   %88 = sext i32 %87 to i64
+  -   %89 = getelementptr inbounds i32, i32* %82, i64 %88
+  -   %90 = load i32, i32* %89, align 4
+  -   %91 = icmp eq i32 %90, 0
+  -   br i1 %91, label %92, label %95
+  - 
+  - 92:                                               ; preds = %81
+  -   %93 = load i32, i32* %11, align 4
+  -   %94 = icmp ne i32 %93, 3
+  -   br i1 %94, label %114, label %95
+  - 
+  - 95:                                               ; preds = %92, %81
+  -   %96 = load i32*, i32** %5, align 8
+  -   %97 = load i32, i32* %9, align 4
+  -   %98 = load i32, i32* %8, align 4
+  -   %99 = mul nsw i32 %97, %98
+  -   %100 = load i32, i32* %10, align 4
+  -   %101 = add nsw i32 %99, %100
+  -   %102 = sext i32 %101 to i64
+  -   %103 = getelementptr inbounds i32, i32* %96, i64 %102
+  -   %104 = load i32, i32* %103, align 4
+  -   %105 = icmp eq i32 %104, 1
+  -   br i1 %105, label %106, label %112
+  - 
+  - 106:                                              ; preds = %95
+  -   %107 = load i32, i32* %11, align 4
+  -   %108 = icmp ne i32 %107, 2
+  -   br i1 %108, label %109, label %112
+  - 
+  - 109:                                              ; preds = %106
+  -   %110 = load i32, i32* %11, align 4
+  -   %111 = icmp ne i32 %110, 3
+  -   br label %112
+  - 
+  - 112:                                              ; preds = %109, %106, %95
+  -   %113 = phi i1 [ false, %106 ], [ false, %95 ], [ %111, %109 ]
+  -   br label %114
+  - 
+  - 114:                                              ; preds = %112, %92
+  -   %115 = phi i1 [ true, %92 ], [ %113, %112 ]
+  -   %116 = zext i1 %115 to i64
+  -   %117 = select i1 %115, i32 0, i32 1
+  -   %118 = load i32*, i32** %6, align 8
+  -   %119 = load i32, i32* %9, align 4
+  -   %120 = load i32, i32* %8, align 4
+  -   %121 = mul nsw i32 %119, %120
+  -   %122 = load i32, i32* %10, align 4
+  -   %123 = add nsw i32 %121, %122
+  -   %124 = sext i32 %123 to i64
+  -   %125 = getelementptr inbounds i32, i32* %118, i64 %124
+  -   store i32 %117, i32* %125, align 4
+  -   br label %126
+  - 
+  - 126:                                              ; preds = %114
+  -   %127 = load i32, i32* %10, align 4
+  -   %128 = add nsw i32 %127, 1
+  -   store i32 %128, i32* %10, align 4
+  -   br label %21, !llvm.loop !12
+  - 
+  - 129:                                              ; preds = %21
+  -   br label %130
+  - 
+  - 130:                                              ; preds = %129
+  -   %131 = load i32, i32* %9, align 4
+  -   %132 = add nsw i32 %131, 1
+  -   store i32 %132, i32* %9, align 4
+  -   br label %16, !llvm.loop !13
+  - 
+  - 133:                                              ; preds = %16
+  -   ret void
+  - }
+  %15 = load i32*, i32** %3, align 8
+  Uses
+  -   call void @display_gen(i32* noundef %15, i32 noundef 100, i32 noundef 50)
+  Operands
+  -   %3 = alloca i32*, align 8
+  call void @display_gen(i32* noundef %15, i32 noundef 100, i32 noundef 50)
+  Uses
+  Operands
+  -   %15 = load i32*, i32** %3, align 8
+  - i32 100
+  - i32 50
+  - ; Function Attrs: noinline nounwind optnone uwtable
+  - define internal void @display_gen(i32* noundef %0, i32 noundef %1, i32 noundef %2) #0 {
+  -   %4 = alloca i32*, align 8
+  -   %5 = alloca i32, align 4
+  -   %6 = alloca i32, align 4
+  -   %7 = alloca i32, align 4
+  -   %8 = alloca i32, align 4
+  -   store i32* %0, i32** %4, align 8
+  -   store i32 %1, i32* %5, align 4
+  -   store i32 %2, i32* %6, align 4
+  -   store i32 0, i32* %7, align 4
+  -   br label %9
+  - 
+  - 9:                                                ; preds = %36, %3
+  -   %10 = load i32, i32* %7, align 4
+  -   %11 = load i32, i32* %5, align 4
+  -   %12 = icmp slt i32 %10, %11
+  -   br i1 %12, label %13, label %39
+  - 
+  - 13:                                               ; preds = %9
+  -   store i32 0, i32* %8, align 4
+  -   br label %14
+  - 
+  - 14:                                               ; preds = %32, %13
+  -   %15 = load i32, i32* %8, align 4
+  -   %16 = load i32, i32* %6, align 4
+  -   %17 = icmp slt i32 %15, %16
+  -   br i1 %17, label %18, label %35
+  - 
+  - 18:                                               ; preds = %14
+  -   %19 = load i32, i32* %7, align 4
+  -   %20 = load i32, i32* %8, align 4
+  -   %21 = load i32*, i32** %4, align 8
+  -   %22 = load i32, i32* %7, align 4
+  -   %23 = load i32, i32* %6, align 4
+  -   %24 = mul nsw i32 %22, %23
+  -   %25 = load i32, i32* %8, align 4
+  -   %26 = add nsw i32 %24, %25
+  -   %27 = sext i32 %26 to i64
+  -   %28 = getelementptr inbounds i32, i32* %21, i64 %27
+  -   %29 = load i32, i32* %28, align 4
+  -   %30 = icmp eq i32 %29, 1
+  -   %31 = zext i1 %30 to i32
+  -   call void @sim_set_pixel(i32 noundef %19, i32 noundef %20, i32 noundef %31)
+  -   br label %32
+  - 
+  - 32:                                               ; preds = %18
+  -   %33 = load i32, i32* %8, align 4
+  -   %34 = add nsw i32 %33, 1
+  -   store i32 %34, i32* %8, align 4
+  -   br label %14, !llvm.loop !14
+  - 
+  - 35:                                               ; preds = %14
+  -   br label %36
+  - 
+  - 36:                                               ; preds = %35
+  -   %37 = load i32, i32* %7, align 4
+  -   %38 = add nsw i32 %37, 1
+  -   store i32 %38, i32* %7, align 4
+  -   br label %9, !llvm.loop !15
+  - 
+  - 39:                                               ; preds = %9
+  -   call void @sim_flush()
+  -   ret void
+  - }
+  %16 = load i32*, i32** %3, align 8
+  Uses
+  -   store i32* %16, i32** %5, align 8
+  Operands
+  -   %3 = alloca i32*, align 8
+  store i32* %16, i32** %5, align 8
+  Uses
+  Operands
+  -   %16 = load i32*, i32** %3, align 8
+  -   %5 = alloca i32*, align 8
+  %17 = load i32*, i32** %4, align 8
+  Uses
+  -   store i32* %17, i32** %3, align 8
+  Operands
+  -   %4 = alloca i32*, align 8
+  store i32* %17, i32** %3, align 8
+  Uses
+  Operands
+  -   %17 = load i32*, i32** %4, align 8
+  -   %3 = alloca i32*, align 8
+  %18 = load i32*, i32** %5, align 8
+  Uses
+  -   store i32* %18, i32** %4, align 8
+  Operands
+  -   %5 = alloca i32*, align 8
+  store i32* %18, i32** %4, align 8
+  Uses
+  Operands
+  -   %18 = load i32*, i32** %5, align 8
+  -   %4 = alloca i32*, align 8
+  br label %9, !llvm.loop !6
+  Uses
+  Operands
+  - 
+  - 9:                                                ; preds = %12, %0
+  -   %10 = call i32 @sim_keep_running()
+  -   %11 = icmp ne i32 %10, 0
+  -   br i1 %11, label %12, label %19
+  ret void
+  Uses
+  Operands
+STATISTICS end for app
+
+ANALYSIS start for app
+Most frequent patterns (size=1)
+- Top 1 (1 times)
+    %7 = getelementptr inbounds [5000 x i32], [5000 x i32]* %2, i64 0, i64 0
+- Top 2 (1 times)
+    store i32* %7, i32** %4, align 8
+- Top 3 (1 times)
+    store i32* %6, i32** %3, align 8
+Most frequent patterns (size=2)
+- Top 1 (1 times)
+    %5 = alloca i32*, align 8
+    %6 = getelementptr inbounds [5000 x i32], [5000 x i32]* %1, i64 0, i64 0
+- Top 2 (1 times)
+    store i32* %7, i32** %4, align 8
+    %8 = load i32*, i32** %3, align 8
+- Top 3 (1 times)
+    store i32* %6, i32** %3, align 8
+    %7 = getelementptr inbounds [5000 x i32], [5000 x i32]* %2, i64 0, i64 0
+Most frequent patterns (size=3)
+- Top 1 (1 times)
+    %4 = alloca i32*, align 8
+    %5 = alloca i32*, align 8
+    %6 = getelementptr inbounds [5000 x i32], [5000 x i32]* %1, i64 0, i64 0
+- Top 2 (1 times)
+    store i32* %7, i32** %4, align 8
+    %8 = load i32*, i32** %3, align 8
+    call void @init_gen(i32* noundef %8, i32 noundef 100, i32 noundef 50, i32 noundef 4)
+- Top 3 (1 times)
+    store i32* %6, i32** %3, align 8
+    %7 = getelementptr inbounds [5000 x i32], [5000 x i32]* %2, i64 0, i64 0
+    store i32* %7, i32** %4, align 8
+Most frequent patterns (size=4)
+- Top 1 (1 times)
+    %5 = alloca i32*, align 8
+    %6 = getelementptr inbounds [5000 x i32], [5000 x i32]* %1, i64 0, i64 0
+    store i32* %6, i32** %3, align 8
+    %7 = getelementptr inbounds [5000 x i32], [5000 x i32]* %2, i64 0, i64 0
+- Top 2 (1 times)
+    store i32* %7, i32** %4, align 8
+    %8 = load i32*, i32** %3, align 8
+    call void @init_gen(i32* noundef %8, i32 noundef 100, i32 noundef 50, i32 noundef 4)
+    br label %9
+- Top 3 (1 times)
+    store i32* %6, i32** %3, align 8
+    %7 = getelementptr inbounds [5000 x i32], [5000 x i32]* %2, i64 0, i64 0
+    store i32* %7, i32** %4, align 8
+    %8 = load i32*, i32** %3, align 8
+Most frequent patterns (size=5)
+- Top 1 (1 times)
+    %1 = alloca [5000 x i32], align 16
+    %2 = alloca [5000 x i32], align 16
+    %3 = alloca i32*, align 8
+    %4 = alloca i32*, align 8
+    %5 = alloca i32*, align 8
+- Top 2 (1 times)
+    %13 = load i32*, i32** %3, align 8
+    %14 = load i32*, i32** %4, align 8
+    call void @calc_next_gen(i32* noundef %13, i32* noundef %14, i32 noundef 100, i32 noundef 50)
+    %15 = load i32*, i32** %3, align 8
+    call void @display_gen(i32* noundef %15, i32 noundef 100, i32 noundef 50)
+- Top 3 (1 times)
+    %14 = load i32*, i32** %4, align 8
+    call void @calc_next_gen(i32* noundef %13, i32* noundef %14, i32 noundef 100, i32 noundef 50)
+    %15 = load i32*, i32** %3, align 8
+    call void @display_gen(i32* noundef %15, i32 noundef 100, i32 noundef 50)
+    %16 = load i32*, i32** %3, align 8
+ANALYSIS end for app
+
+STATISTICS start for init_gen
+  %5 = alloca i32*, align 8
+  Uses
+  -   %27 = load i32*, i32** %5, align 8
+  -   store i32* %0, i32** %5, align 8
+  Operands
+  - i32 1
+  %6 = alloca i32, align 4
+  Uses
+  -   %13 = load i32, i32* %6, align 4
+  -   store i32 %1, i32* %6, align 4
+  Operands
+  - i32 1
+  %7 = alloca i32, align 4
+  Uses
+  -   %29 = load i32, i32* %7, align 4
+  -   %18 = load i32, i32* %7, align 4
+  -   store i32 %2, i32* %7, align 4
+  Operands
+  - i32 1
+  %8 = alloca i32, align 4
+  Uses
+  -   %22 = load i32, i32* %8, align 4
+  -   store i32 %3, i32* %8, align 4
+  Operands
+  - i32 1
+  %9 = alloca i32, align 4
+  Uses
+  -   store i32 %41, i32* %9, align 4
+  -   %40 = load i32, i32* %9, align 4
+  -   %28 = load i32, i32* %9, align 4
+  -   %12 = load i32, i32* %9, align 4
+  -   store i32 0, i32* %9, align 4
+  Operands
+  - i32 1
+  %10 = alloca i32, align 4
+  Uses
+  -   store i32 %37, i32* %10, align 4
+  -   %36 = load i32, i32* %10, align 4
+  -   %31 = load i32, i32* %10, align 4
+  -   %17 = load i32, i32* %10, align 4
+  -   store i32 0, i32* %10, align 4
+  Operands
+  - i32 1
+  store i32* %0, i32** %5, align 8
+  Uses
+  Operands
+  - i32* %0
+  -   %5 = alloca i32*, align 8
+  store i32 %1, i32* %6, align 4
+  Uses
+  Operands
+  - i32 %1
+  -   %6 = alloca i32, align 4
+  store i32 %2, i32* %7, align 4
+  Uses
+  Operands
+  - i32 %2
+  -   %7 = alloca i32, align 4
+  store i32 %3, i32* %8, align 4
+  Uses
+  Operands
+  - i32 %3
+  -   %8 = alloca i32, align 4
+  store i32 0, i32* %9, align 4
+  Uses
+  Operands
+  - i32 0
+  -   %9 = alloca i32, align 4
+  br label %11
+  Uses
+  Operands
+  - 
+  - 11:                                               ; preds = %39, %4
+  -   %12 = load i32, i32* %9, align 4
+  -   %13 = load i32, i32* %6, align 4
+  -   %14 = icmp slt i32 %12, %13
+  -   br i1 %14, label %15, label %42
+  %12 = load i32, i32* %9, align 4
+  Uses
+  -   %14 = icmp slt i32 %12, %13
+  Operands
+  -   %9 = alloca i32, align 4
+  %13 = load i32, i32* %6, align 4
+  Uses
+  -   %14 = icmp slt i32 %12, %13
+  Operands
+  -   %6 = alloca i32, align 4
+  %14 = icmp slt i32 %12, %13
+  Uses
+  -   br i1 %14, label %15, label %42
+  Operands
+  -   %12 = load i32, i32* %9, align 4
+  -   %13 = load i32, i32* %6, align 4
+  br i1 %14, label %15, label %42
+  Uses
+  Operands
+  -   %14 = icmp slt i32 %12, %13
+  - 
+  - 42:                                               ; preds = %11
+  -   ret void
+  - 
+  - 15:                                               ; preds = %11
+  -   store i32 0, i32* %10, align 4
+  -   br label %16
+  store i32 0, i32* %10, align 4
+  Uses
+  Operands
+  - i32 0
+  -   %10 = alloca i32, align 4
+  br label %16
+  Uses
+  Operands
+  - 
+  - 16:                                               ; preds = %35, %15
+  -   %17 = load i32, i32* %10, align 4
+  -   %18 = load i32, i32* %7, align 4
+  -   %19 = icmp slt i32 %17, %18
+  -   br i1 %19, label %20, label %38
+  %17 = load i32, i32* %10, align 4
+  Uses
+  -   %19 = icmp slt i32 %17, %18
+  Operands
+  -   %10 = alloca i32, align 4
+  %18 = load i32, i32* %7, align 4
+  Uses
+  -   %19 = icmp slt i32 %17, %18
+  Operands
+  -   %7 = alloca i32, align 4
+  %19 = icmp slt i32 %17, %18
+  Uses
+  -   br i1 %19, label %20, label %38
+  Operands
+  -   %17 = load i32, i32* %10, align 4
+  -   %18 = load i32, i32* %7, align 4
+  br i1 %19, label %20, label %38
+  Uses
+  Operands
+  -   %19 = icmp slt i32 %17, %18
+  - 
+  - 38:                                               ; preds = %16
+  -   br label %39
+  - 
+  - 20:                                               ; preds = %16
+  -   %21 = call i32 @sim_rand()
+  -   %22 = load i32, i32* %8, align 4
+  -   %23 = srem i32 %21, %22
+  -   %24 = icmp ne i32 %23, 0
+  -   %25 = zext i1 %24 to i64
+  -   %26 = select i1 %24, i32 0, i32 1
+  -   %27 = load i32*, i32** %5, align 8
+  -   %28 = load i32, i32* %9, align 4
+  -   %29 = load i32, i32* %7, align 4
+  -   %30 = mul nsw i32 %28, %29
+  -   %31 = load i32, i32* %10, align 4
+  -   %32 = add nsw i32 %30, %31
+  -   %33 = sext i32 %32 to i64
+  -   %34 = getelementptr inbounds i32, i32* %27, i64 %33
+  -   store i32 %26, i32* %34, align 4
+  -   br label %35
+  %21 = call i32 @sim_rand()
+  Uses
+  -   %23 = srem i32 %21, %22
+  Operands
+  - declare i32 @sim_rand() #1
+  %22 = load i32, i32* %8, align 4
+  Uses
+  -   %23 = srem i32 %21, %22
+  Operands
+  -   %8 = alloca i32, align 4
+  %23 = srem i32 %21, %22
+  Uses
+  -   %24 = icmp ne i32 %23, 0
+  Operands
+  -   %21 = call i32 @sim_rand()
+  -   %22 = load i32, i32* %8, align 4
+  %24 = icmp ne i32 %23, 0
+  Uses
+  -   %26 = select i1 %24, i32 0, i32 1
+  -   %25 = zext i1 %24 to i64
+  Operands
+  -   %23 = srem i32 %21, %22
+  - i32 0
+  %25 = zext i1 %24 to i64
+  Uses
+  Operands
+  -   %24 = icmp ne i32 %23, 0
+  %26 = select i1 %24, i32 0, i32 1
+  Uses
+  -   store i32 %26, i32* %34, align 4
+  Operands
+  -   %24 = icmp ne i32 %23, 0
+  - i32 0
+  - i32 1
+  %27 = load i32*, i32** %5, align 8
+  Uses
+  -   %34 = getelementptr inbounds i32, i32* %27, i64 %33
+  Operands
+  -   %5 = alloca i32*, align 8
+  %28 = load i32, i32* %9, align 4
+  Uses
+  -   %30 = mul nsw i32 %28, %29
+  Operands
+  -   %9 = alloca i32, align 4
+  %29 = load i32, i32* %7, align 4
+  Uses
+  -   %30 = mul nsw i32 %28, %29
+  Operands
+  -   %7 = alloca i32, align 4
+  %30 = mul nsw i32 %28, %29
+  Uses
+  -   %32 = add nsw i32 %30, %31
+  Operands
+  -   %28 = load i32, i32* %9, align 4
+  -   %29 = load i32, i32* %7, align 4
+  %31 = load i32, i32* %10, align 4
+  Uses
+  -   %32 = add nsw i32 %30, %31
+  Operands
+  -   %10 = alloca i32, align 4
+  %32 = add nsw i32 %30, %31
+  Uses
+  -   %33 = sext i32 %32 to i64
+  Operands
+  -   %30 = mul nsw i32 %28, %29
+  -   %31 = load i32, i32* %10, align 4
+  %33 = sext i32 %32 to i64
+  Uses
+  -   %34 = getelementptr inbounds i32, i32* %27, i64 %33
+  Operands
+  -   %32 = add nsw i32 %30, %31
+  %34 = getelementptr inbounds i32, i32* %27, i64 %33
+  Uses
+  -   store i32 %26, i32* %34, align 4
+  Operands
+  -   %27 = load i32*, i32** %5, align 8
+  -   %33 = sext i32 %32 to i64
+  store i32 %26, i32* %34, align 4
+  Uses
+  Operands
+  -   %26 = select i1 %24, i32 0, i32 1
+  -   %34 = getelementptr inbounds i32, i32* %27, i64 %33
+  br label %35
+  Uses
+  Operands
+  - 
+  - 35:                                               ; preds = %20
+  -   %36 = load i32, i32* %10, align 4
+  -   %37 = add nsw i32 %36, 1
+  -   store i32 %37, i32* %10, align 4
+  -   br label %16, !llvm.loop !6
+  %36 = load i32, i32* %10, align 4
+  Uses
+  -   %37 = add nsw i32 %36, 1
+  Operands
+  -   %10 = alloca i32, align 4
+  %37 = add nsw i32 %36, 1
+  Uses
+  -   store i32 %37, i32* %10, align 4
+  Operands
+  -   %36 = load i32, i32* %10, align 4
+  - i32 1
+  store i32 %37, i32* %10, align 4
+  Uses
+  Operands
+  -   %37 = add nsw i32 %36, 1
+  -   %10 = alloca i32, align 4
+  br label %16, !llvm.loop !6
+  Uses
+  Operands
+  - 
+  - 16:                                               ; preds = %35, %15
+  -   %17 = load i32, i32* %10, align 4
+  -   %18 = load i32, i32* %7, align 4
+  -   %19 = icmp slt i32 %17, %18
+  -   br i1 %19, label %20, label %38
+  br label %39
+  Uses
+  Operands
+  - 
+  - 39:                                               ; preds = %38
+  -   %40 = load i32, i32* %9, align 4
+  -   %41 = add nsw i32 %40, 1
+  -   store i32 %41, i32* %9, align 4
+  -   br label %11, !llvm.loop !8
+  %40 = load i32, i32* %9, align 4
+  Uses
+  -   %41 = add nsw i32 %40, 1
+  Operands
+  -   %9 = alloca i32, align 4
+  %41 = add nsw i32 %40, 1
+  Uses
+  -   store i32 %41, i32* %9, align 4
+  Operands
+  -   %40 = load i32, i32* %9, align 4
+  - i32 1
+  store i32 %41, i32* %9, align 4
+  Uses
+  Operands
+  -   %41 = add nsw i32 %40, 1
+  -   %9 = alloca i32, align 4
+  br label %11, !llvm.loop !8
+  Uses
+  Operands
+  - 
+  - 11:                                               ; preds = %39, %4
+  -   %12 = load i32, i32* %9, align 4
+  -   %13 = load i32, i32* %6, align 4
+  -   %14 = icmp slt i32 %12, %13
+  -   br i1 %14, label %15, label %42
+  ret void
+  Uses
+  Operands
+STATISTICS end for init_gen
+
+ANALYSIS start for init_gen
+Most frequent patterns (size=1)
+- Top 1 (1 times)
+    br label %35
+- Top 2 (1 times)
+    %5 = alloca i32*, align 8
+- Top 3 (1 times)
+    %6 = alloca i32, align 4
+Most frequent patterns (size=2)
+- Top 1 (1 times)
+    %9 = alloca i32, align 4
+    %10 = alloca i32, align 4
+- Top 2 (1 times)
+    %34 = getelementptr inbounds i32, i32* %27, i64 %33
+    store i32 %26, i32* %34, align 4
+- Top 3 (1 times)
+    %36 = load i32, i32* %10, align 4
+    %37 = add nsw i32 %36, 1
+Most frequent patterns (size=3)
+- Top 1 (1 times)
+    %32 = add nsw i32 %30, %31
+    %33 = sext i32 %32 to i64
+    %34 = getelementptr inbounds i32, i32* %27, i64 %33
+- Top 2 (1 times)
+    store i32* %0, i32** %5, align 8
+    store i32 %1, i32* %6, align 4
+    store i32 %2, i32* %7, align 4
+- Top 3 (1 times)
+    store i32 %3, i32* %8, align 4
+    store i32 0, i32* %9, align 4
+    br label %11
+Most frequent patterns (size=4)
+- Top 1 (1 times)
+    %31 = load i32, i32* %10, align 4
+    %32 = add nsw i32 %30, %31
+    %33 = sext i32 %32 to i64
+    %34 = getelementptr inbounds i32, i32* %27, i64 %33
+- Top 2 (1 times)
+    store i32* %0, i32** %5, align 8
+    store i32 %1, i32* %6, align 4
+    store i32 %2, i32* %7, align 4
+    store i32 %3, i32* %8, align 4
+- Top 3 (1 times)
+    store i32 %2, i32* %7, align 4
+    store i32 %3, i32* %8, align 4
+    store i32 0, i32* %9, align 4
+    br label %11
+Most frequent patterns (size=5)
+- Top 1 (1 times)
+    %30 = mul nsw i32 %28, %29
+    %31 = load i32, i32* %10, align 4
+    %32 = add nsw i32 %30, %31
+    %33 = sext i32 %32 to i64
+    %34 = getelementptr inbounds i32, i32* %27, i64 %33
+- Top 2 (1 times)
+    store i32* %0, i32** %5, align 8
+    store i32 %1, i32* %6, align 4
+    store i32 %2, i32* %7, align 4
+    store i32 %3, i32* %8, align 4
+    store i32 0, i32* %9, align 4
+- Top 3 (1 times)
+    store i32 %1, i32* %6, align 4
+    store i32 %2, i32* %7, align 4
+    store i32 %3, i32* %8, align 4
+    store i32 0, i32* %9, align 4
+    br label %11
+ANALYSIS end for init_gen
+
+STATISTICS start for calc_next_gen
+  %5 = alloca i32*, align 8
+  Uses
+  -   %96 = load i32*, i32** %5, align 8
+  -   %82 = load i32*, i32** %5, align 8
+  -   %60 = load i32*, i32** %5, align 8
+  -   store i32* %0, i32** %5, align 8
+  Operands
+  - i32 1
+  %6 = alloca i32*, align 8
+  Uses
+  -   %118 = load i32*, i32** %6, align 8
+  -   store i32* %1, i32** %6, align 8
+  Operands
+  - i32 1
+  %7 = alloca i32, align 4
+  Uses
+  -   %50 = load i32, i32* %7, align 4
+  -   %18 = load i32, i32* %7, align 4
+  -   store i32 %2, i32* %7, align 4
+  Operands
+  - i32 1
+  %8 = alloca i32, align 4
+  Uses
+  -   %120 = load i32, i32* %8, align 4
+  -   %98 = load i32, i32* %8, align 4
+  -   %84 = load i32, i32* %8, align 4
+  -   %62 = load i32, i32* %8, align 4
+  -   %57 = load i32, i32* %8, align 4
+  -   %23 = load i32, i32* %8, align 4
+  -   store i32 %3, i32* %8, align 4
+  Operands
+  - i32 1
+  %9 = alloca i32, align 4
+  Uses
+  -   store i32 %132, i32* %9, align 4
+  -   %131 = load i32, i32* %9, align 4
+  -   %119 = load i32, i32* %9, align 4
+  -   %97 = load i32, i32* %9, align 4
+  -   %83 = load i32, i32* %9, align 4
+  -   %34 = load i32, i32* %9, align 4
+  -   %17 = load i32, i32* %9, align 4
+  -   store i32 0, i32* %9, align 4
+  Operands
+  - i32 1
+  %10 = alloca i32, align 4
+  Uses
+  -   store i32 %128, i32* %10, align 4
+  -   %127 = load i32, i32* %10, align 4
+  -   %122 = load i32, i32* %10, align 4
+  -   %100 = load i32, i32* %10, align 4
+  -   %86 = load i32, i32* %10, align 4
+  -   %37 = load i32, i32* %10, align 4
+  -   %22 = load i32, i32* %10, align 4
+  -   store i32 0, i32* %10, align 4
+  Operands
+  - i32 1
+  %11 = alloca i32, align 4
+  Uses
+  -   %110 = load i32, i32* %11, align 4
+  -   %107 = load i32, i32* %11, align 4
+  -   %93 = load i32, i32* %11, align 4
+  -   store i32 %72, i32* %11, align 4
+  -   %71 = load i32, i32* %11, align 4
+  -   store i32 0, i32* %11, align 4
+  Operands
+  - i32 1
+  %12 = alloca i32, align 4
+  Uses
+  -   store i32 %80, i32* %12, align 4
+  -   %79 = load i32, i32* %12, align 4
+  -   %40 = load i32, i32* %12, align 4
+  -   %35 = load i32, i32* %12, align 4
+  -   %27 = load i32, i32* %12, align 4
+  -   store i32 -1, i32* %12, align 4
+  Operands
+  - i32 1
+  %13 = alloca i32, align 4
+  Uses
+  -   store i32 %76, i32* %13, align 4
+  -   %75 = load i32, i32* %13, align 4
+  -   %43 = load i32, i32* %13, align 4
+  -   %38 = load i32, i32* %13, align 4
+  -   %31 = load i32, i32* %13, align 4
+  -   store i32 -1, i32* %13, align 4
+  Operands
+  - i32 1
+  %14 = alloca i32, align 4
+  Uses
+  -   %61 = load i32, i32* %14, align 4
+  -   %49 = load i32, i32* %14, align 4
+  -   %46 = load i32, i32* %14, align 4
+  -   store i32 %36, i32* %14, align 4
+  Operands
+  - i32 1
+  %15 = alloca i32, align 4
+  Uses
+  -   %64 = load i32, i32* %15, align 4
+  -   %56 = load i32, i32* %15, align 4
+  -   %53 = load i32, i32* %15, align 4
+  -   store i32 %39, i32* %15, align 4
+  Operands
+  - i32 1
+  store i32* %0, i32** %5, align 8
+  Uses
+  Operands
+  - i32* %0
+  -   %5 = alloca i32*, align 8
+  store i32* %1, i32** %6, align 8
+  Uses
+  Operands
+  - i32* %1
+  -   %6 = alloca i32*, align 8
+  store i32 %2, i32* %7, align 4
+  Uses
+  Operands
+  - i32 %2
+  -   %7 = alloca i32, align 4
+  store i32 %3, i32* %8, align 4
+  Uses
+  Operands
+  - i32 %3
+  -   %8 = alloca i32, align 4
+  store i32 0, i32* %9, align 4
+  Uses
+  Operands
+  - i32 0
+  -   %9 = alloca i32, align 4
+  br label %16
+  Uses
+  Operands
+  - 
+  - 16:                                               ; preds = %130, %4
+  -   %17 = load i32, i32* %9, align 4
+  -   %18 = load i32, i32* %7, align 4
+  -   %19 = icmp slt i32 %17, %18
+  -   br i1 %19, label %20, label %133
+  %17 = load i32, i32* %9, align 4
+  Uses
+  -   %19 = icmp slt i32 %17, %18
+  Operands
+  -   %9 = alloca i32, align 4
+  %18 = load i32, i32* %7, align 4
+  Uses
+  -   %19 = icmp slt i32 %17, %18
+  Operands
+  -   %7 = alloca i32, align 4
+  %19 = icmp slt i32 %17, %18
+  Uses
+  -   br i1 %19, label %20, label %133
+  Operands
+  -   %17 = load i32, i32* %9, align 4
+  -   %18 = load i32, i32* %7, align 4
+  br i1 %19, label %20, label %133
+  Uses
+  Operands
+  -   %19 = icmp slt i32 %17, %18
+  - 
+  - 133:                                              ; preds = %16
+  -   ret void
+  - 
+  - 20:                                               ; preds = %16
+  -   store i32 0, i32* %10, align 4
+  -   br label %21
+  store i32 0, i32* %10, align 4
+  Uses
+  Operands
+  - i32 0
+  -   %10 = alloca i32, align 4
+  br label %21
+  Uses
+  Operands
+  - 
+  - 21:                                               ; preds = %126, %20
+  -   %22 = load i32, i32* %10, align 4
+  -   %23 = load i32, i32* %8, align 4
+  -   %24 = icmp slt i32 %22, %23
+  -   br i1 %24, label %25, label %129
+  %22 = load i32, i32* %10, align 4
+  Uses
+  -   %24 = icmp slt i32 %22, %23
+  Operands
+  -   %10 = alloca i32, align 4
+  %23 = load i32, i32* %8, align 4
+  Uses
+  -   %24 = icmp slt i32 %22, %23
+  Operands
+  -   %8 = alloca i32, align 4
+  %24 = icmp slt i32 %22, %23
+  Uses
+  -   br i1 %24, label %25, label %129
+  Operands
+  -   %22 = load i32, i32* %10, align 4
+  -   %23 = load i32, i32* %8, align 4
+  br i1 %24, label %25, label %129
+  Uses
+  Operands
+  -   %24 = icmp slt i32 %22, %23
+  - 
+  - 129:                                              ; preds = %21
+  -   br label %130
+  - 
+  - 25:                                               ; preds = %21
+  -   store i32 0, i32* %11, align 4
+  -   store i32 -1, i32* %12, align 4
+  -   br label %26
+  store i32 0, i32* %11, align 4
+  Uses
+  Operands
+  - i32 0
+  -   %11 = alloca i32, align 4
+  store i32 -1, i32* %12, align 4
+  Uses
+  Operands
+  - i32 -1
+  -   %12 = alloca i32, align 4
+  br label %26
+  Uses
+  Operands
+  - 
+  - 26:                                               ; preds = %78, %25
+  -   %27 = load i32, i32* %12, align 4
+  -   %28 = icmp sle i32 %27, 1
+  -   br i1 %28, label %29, label %81
+  %27 = load i32, i32* %12, align 4
+  Uses
+  -   %28 = icmp sle i32 %27, 1
+  Operands
+  -   %12 = alloca i32, align 4
+  %28 = icmp sle i32 %27, 1
+  Uses
+  -   br i1 %28, label %29, label %81
+  Operands
+  -   %27 = load i32, i32* %12, align 4
+  - i32 1
+  br i1 %28, label %29, label %81
+  Uses
+  Operands
+  -   %28 = icmp sle i32 %27, 1
+  - 
+  - 81:                                               ; preds = %26
+  -   %82 = load i32*, i32** %5, align 8
+  -   %83 = load i32, i32* %9, align 4
+  -   %84 = load i32, i32* %8, align 4
+  -   %85 = mul nsw i32 %83, %84
+  -   %86 = load i32, i32* %10, align 4
+  -   %87 = add nsw i32 %85, %86
+  -   %88 = sext i32 %87 to i64
+  -   %89 = getelementptr inbounds i32, i32* %82, i64 %88
+  -   %90 = load i32, i32* %89, align 4
+  -   %91 = icmp eq i32 %90, 0
+  -   br i1 %91, label %92, label %95
+  - 
+  - 29:                                               ; preds = %26
+  -   store i32 -1, i32* %13, align 4
+  -   br label %30
+  store i32 -1, i32* %13, align 4
+  Uses
+  Operands
+  - i32 -1
+  -   %13 = alloca i32, align 4
+  br label %30
+  Uses
+  Operands
+  - 
+  - 30:                                               ; preds = %74, %29
+  -   %31 = load i32, i32* %13, align 4
+  -   %32 = icmp sle i32 %31, 1
+  -   br i1 %32, label %33, label %77
+  %31 = load i32, i32* %13, align 4
+  Uses
+  -   %32 = icmp sle i32 %31, 1
+  Operands
+  -   %13 = alloca i32, align 4
+  %32 = icmp sle i32 %31, 1
+  Uses
+  -   br i1 %32, label %33, label %77
+  Operands
+  -   %31 = load i32, i32* %13, align 4
+  - i32 1
+  br i1 %32, label %33, label %77
+  Uses
+  Operands
+  -   %32 = icmp sle i32 %31, 1
+  - 
+  - 77:                                               ; preds = %30
+  -   br label %78
+  - 
+  - 33:                                               ; preds = %30
+  -   %34 = load i32, i32* %9, align 4
+  -   %35 = load i32, i32* %12, align 4
+  -   %36 = add nsw i32 %34, %35
+  -   store i32 %36, i32* %14, align 4
+  -   %37 = load i32, i32* %10, align 4
+  -   %38 = load i32, i32* %13, align 4
+  -   %39 = add nsw i32 %37, %38
+  -   store i32 %39, i32* %15, align 4
+  -   %40 = load i32, i32* %12, align 4
+  -   %41 = icmp eq i32 %40, 0
+  -   br i1 %41, label %42, label %45
+  %34 = load i32, i32* %9, align 4
+  Uses
+  -   %36 = add nsw i32 %34, %35
+  Operands
+  -   %9 = alloca i32, align 4
+  %35 = load i32, i32* %12, align 4
+  Uses
+  -   %36 = add nsw i32 %34, %35
+  Operands
+  -   %12 = alloca i32, align 4
+  %36 = add nsw i32 %34, %35
+  Uses
+  -   store i32 %36, i32* %14, align 4
+  Operands
+  -   %34 = load i32, i32* %9, align 4
+  -   %35 = load i32, i32* %12, align 4
+  store i32 %36, i32* %14, align 4
+  Uses
+  Operands
+  -   %36 = add nsw i32 %34, %35
+  -   %14 = alloca i32, align 4
+  %37 = load i32, i32* %10, align 4
+  Uses
+  -   %39 = add nsw i32 %37, %38
+  Operands
+  -   %10 = alloca i32, align 4
+  %38 = load i32, i32* %13, align 4
+  Uses
+  -   %39 = add nsw i32 %37, %38
+  Operands
+  -   %13 = alloca i32, align 4
+  %39 = add nsw i32 %37, %38
+  Uses
+  -   store i32 %39, i32* %15, align 4
+  Operands
+  -   %37 = load i32, i32* %10, align 4
+  -   %38 = load i32, i32* %13, align 4
+  store i32 %39, i32* %15, align 4
+  Uses
+  Operands
+  -   %39 = add nsw i32 %37, %38
+  -   %15 = alloca i32, align 4
+  %40 = load i32, i32* %12, align 4
+  Uses
+  -   %41 = icmp eq i32 %40, 0
+  Operands
+  -   %12 = alloca i32, align 4
+  %41 = icmp eq i32 %40, 0
+  Uses
+  -   br i1 %41, label %42, label %45
+  Operands
+  -   %40 = load i32, i32* %12, align 4
+  - i32 0
+  br i1 %41, label %42, label %45
+  Uses
+  Operands
+  -   %41 = icmp eq i32 %40, 0
+  - 
+  - 45:                                               ; preds = %42, %33
+  -   %46 = load i32, i32* %14, align 4
+  -   %47 = icmp sle i32 0, %46
+  -   br i1 %47, label %48, label %73
+  - 
+  - 42:                                               ; preds = %33
+  -   %43 = load i32, i32* %13, align 4
+  -   %44 = icmp eq i32 %43, 0
+  -   br i1 %44, label %73, label %45
+  %43 = load i32, i32* %13, align 4
+  Uses
+  -   %44 = icmp eq i32 %43, 0
+  Operands
+  -   %13 = alloca i32, align 4
+  %44 = icmp eq i32 %43, 0
+  Uses
+  -   br i1 %44, label %73, label %45
+  Operands
+  -   %43 = load i32, i32* %13, align 4
+  - i32 0
+  br i1 %44, label %73, label %45
+  Uses
+  Operands
+  -   %44 = icmp eq i32 %43, 0
+  - 
+  - 45:                                               ; preds = %42, %33
+  -   %46 = load i32, i32* %14, align 4
+  -   %47 = icmp sle i32 0, %46
+  -   br i1 %47, label %48, label %73
+  - 
+  - 73:                                               ; preds = %70, %59, %55, %52, %48, %45, %42
+  -   br label %74
+  %46 = load i32, i32* %14, align 4
+  Uses
+  -   %47 = icmp sle i32 0, %46
+  Operands
+  -   %14 = alloca i32, align 4
+  %47 = icmp sle i32 0, %46
+  Uses
+  -   br i1 %47, label %48, label %73
+  Operands
+  - i32 0
+  -   %46 = load i32, i32* %14, align 4
+  br i1 %47, label %48, label %73
+  Uses
+  Operands
+  -   %47 = icmp sle i32 0, %46
+  - 
+  - 73:                                               ; preds = %70, %59, %55, %52, %48, %45, %42
+  -   br label %74
+  - 
+  - 48:                                               ; preds = %45
+  -   %49 = load i32, i32* %14, align 4
+  -   %50 = load i32, i32* %7, align 4
+  -   %51 = icmp slt i32 %49, %50
+  -   br i1 %51, label %52, label %73
+  %49 = load i32, i32* %14, align 4
+  Uses
+  -   %51 = icmp slt i32 %49, %50
+  Operands
+  -   %14 = alloca i32, align 4
+  %50 = load i32, i32* %7, align 4
+  Uses
+  -   %51 = icmp slt i32 %49, %50
+  Operands
+  -   %7 = alloca i32, align 4
+  %51 = icmp slt i32 %49, %50
+  Uses
+  -   br i1 %51, label %52, label %73
+  Operands
+  -   %49 = load i32, i32* %14, align 4
+  -   %50 = load i32, i32* %7, align 4
+  br i1 %51, label %52, label %73
+  Uses
+  Operands
+  -   %51 = icmp slt i32 %49, %50
+  - 
+  - 73:                                               ; preds = %70, %59, %55, %52, %48, %45, %42
+  -   br label %74
+  - 
+  - 52:                                               ; preds = %48
+  -   %53 = load i32, i32* %15, align 4
+  -   %54 = icmp sle i32 0, %53
+  -   br i1 %54, label %55, label %73
+  %53 = load i32, i32* %15, align 4
+  Uses
+  -   %54 = icmp sle i32 0, %53
+  Operands
+  -   %15 = alloca i32, align 4
+  %54 = icmp sle i32 0, %53
+  Uses
+  -   br i1 %54, label %55, label %73
+  Operands
+  - i32 0
+  -   %53 = load i32, i32* %15, align 4
+  br i1 %54, label %55, label %73
+  Uses
+  Operands
+  -   %54 = icmp sle i32 0, %53
+  - 
+  - 73:                                               ; preds = %70, %59, %55, %52, %48, %45, %42
+  -   br label %74
+  - 
+  - 55:                                               ; preds = %52
+  -   %56 = load i32, i32* %15, align 4
+  -   %57 = load i32, i32* %8, align 4
+  -   %58 = icmp slt i32 %56, %57
+  -   br i1 %58, label %59, label %73
+  %56 = load i32, i32* %15, align 4
+  Uses
+  -   %58 = icmp slt i32 %56, %57
+  Operands
+  -   %15 = alloca i32, align 4
+  %57 = load i32, i32* %8, align 4
+  Uses
+  -   %58 = icmp slt i32 %56, %57
+  Operands
+  -   %8 = alloca i32, align 4
+  %58 = icmp slt i32 %56, %57
+  Uses
+  -   br i1 %58, label %59, label %73
+  Operands
+  -   %56 = load i32, i32* %15, align 4
+  -   %57 = load i32, i32* %8, align 4
+  br i1 %58, label %59, label %73
+  Uses
+  Operands
+  -   %58 = icmp slt i32 %56, %57
+  - 
+  - 73:                                               ; preds = %70, %59, %55, %52, %48, %45, %42
+  -   br label %74
+  - 
+  - 59:                                               ; preds = %55
+  -   %60 = load i32*, i32** %5, align 8
+  -   %61 = load i32, i32* %14, align 4
+  -   %62 = load i32, i32* %8, align 4
+  -   %63 = mul nsw i32 %61, %62
+  -   %64 = load i32, i32* %15, align 4
+  -   %65 = add nsw i32 %63, %64
+  -   %66 = sext i32 %65 to i64
+  -   %67 = getelementptr inbounds i32, i32* %60, i64 %66
+  -   %68 = load i32, i32* %67, align 4
+  -   %69 = icmp eq i32 %68, 1
+  -   br i1 %69, label %70, label %73
+  %60 = load i32*, i32** %5, align 8
+  Uses
+  -   %67 = getelementptr inbounds i32, i32* %60, i64 %66
+  Operands
+  -   %5 = alloca i32*, align 8
+  %61 = load i32, i32* %14, align 4
+  Uses
+  -   %63 = mul nsw i32 %61, %62
+  Operands
+  -   %14 = alloca i32, align 4
+  %62 = load i32, i32* %8, align 4
+  Uses
+  -   %63 = mul nsw i32 %61, %62
+  Operands
+  -   %8 = alloca i32, align 4
+  %63 = mul nsw i32 %61, %62
+  Uses
+  -   %65 = add nsw i32 %63, %64
+  Operands
+  -   %61 = load i32, i32* %14, align 4
+  -   %62 = load i32, i32* %8, align 4
+  %64 = load i32, i32* %15, align 4
+  Uses
+  -   %65 = add nsw i32 %63, %64
+  Operands
+  -   %15 = alloca i32, align 4
+  %65 = add nsw i32 %63, %64
+  Uses
+  -   %66 = sext i32 %65 to i64
+  Operands
+  -   %63 = mul nsw i32 %61, %62
+  -   %64 = load i32, i32* %15, align 4
+  %66 = sext i32 %65 to i64
+  Uses
+  -   %67 = getelementptr inbounds i32, i32* %60, i64 %66
+  Operands
+  -   %65 = add nsw i32 %63, %64
+  %67 = getelementptr inbounds i32, i32* %60, i64 %66
+  Uses
+  -   %68 = load i32, i32* %67, align 4
+  Operands
+  -   %60 = load i32*, i32** %5, align 8
+  -   %66 = sext i32 %65 to i64
+  %68 = load i32, i32* %67, align 4
+  Uses
+  -   %69 = icmp eq i32 %68, 1
+  Operands
+  -   %67 = getelementptr inbounds i32, i32* %60, i64 %66
+  %69 = icmp eq i32 %68, 1
+  Uses
+  -   br i1 %69, label %70, label %73
+  Operands
+  -   %68 = load i32, i32* %67, align 4
+  - i32 1
+  br i1 %69, label %70, label %73
+  Uses
+  Operands
+  -   %69 = icmp eq i32 %68, 1
+  - 
+  - 73:                                               ; preds = %70, %59, %55, %52, %48, %45, %42
+  -   br label %74
+  - 
+  - 70:                                               ; preds = %59
+  -   %71 = load i32, i32* %11, align 4
+  -   %72 = add nsw i32 %71, 1
+  -   store i32 %72, i32* %11, align 4
+  -   br label %73
+  %71 = load i32, i32* %11, align 4
+  Uses
+  -   %72 = add nsw i32 %71, 1
+  Operands
+  -   %11 = alloca i32, align 4
+  %72 = add nsw i32 %71, 1
+  Uses
+  -   store i32 %72, i32* %11, align 4
+  Operands
+  -   %71 = load i32, i32* %11, align 4
+  - i32 1
+  store i32 %72, i32* %11, align 4
+  Uses
+  Operands
+  -   %72 = add nsw i32 %71, 1
+  -   %11 = alloca i32, align 4
+  br label %73
+  Uses
+  Operands
+  - 
+  - 73:                                               ; preds = %70, %59, %55, %52, %48, %45, %42
+  -   br label %74
+  br label %74
+  Uses
+  Operands
+  - 
+  - 74:                                               ; preds = %73
+  -   %75 = load i32, i32* %13, align 4
+  -   %76 = add nsw i32 %75, 1
+  -   store i32 %76, i32* %13, align 4
+  -   br label %30, !llvm.loop !6
+  %75 = load i32, i32* %13, align 4
+  Uses
+  -   %76 = add nsw i32 %75, 1
+  Operands
+  -   %13 = alloca i32, align 4
+  %76 = add nsw i32 %75, 1
+  Uses
+  -   store i32 %76, i32* %13, align 4
+  Operands
+  -   %75 = load i32, i32* %13, align 4
+  - i32 1
+  store i32 %76, i32* %13, align 4
+  Uses
+  Operands
+  -   %76 = add nsw i32 %75, 1
+  -   %13 = alloca i32, align 4
+  br label %30, !llvm.loop !6
+  Uses
+  Operands
+  - 
+  - 30:                                               ; preds = %74, %29
+  -   %31 = load i32, i32* %13, align 4
+  -   %32 = icmp sle i32 %31, 1
+  -   br i1 %32, label %33, label %77
+  br label %78
+  Uses
+  Operands
+  - 
+  - 78:                                               ; preds = %77
+  -   %79 = load i32, i32* %12, align 4
+  -   %80 = add nsw i32 %79, 1
+  -   store i32 %80, i32* %12, align 4
+  -   br label %26, !llvm.loop !8
+  %79 = load i32, i32* %12, align 4
+  Uses
+  -   %80 = add nsw i32 %79, 1
+  Operands
+  -   %12 = alloca i32, align 4
+  %80 = add nsw i32 %79, 1
+  Uses
+  -   store i32 %80, i32* %12, align 4
+  Operands
+  -   %79 = load i32, i32* %12, align 4
+  - i32 1
+  store i32 %80, i32* %12, align 4
+  Uses
+  Operands
+  -   %80 = add nsw i32 %79, 1
+  -   %12 = alloca i32, align 4
+  br label %26, !llvm.loop !8
+  Uses
+  Operands
+  - 
+  - 26:                                               ; preds = %78, %25
+  -   %27 = load i32, i32* %12, align 4
+  -   %28 = icmp sle i32 %27, 1
+  -   br i1 %28, label %29, label %81
+  %82 = load i32*, i32** %5, align 8
+  Uses
+  -   %89 = getelementptr inbounds i32, i32* %82, i64 %88
+  Operands
+  -   %5 = alloca i32*, align 8
+  %83 = load i32, i32* %9, align 4
+  Uses
+  -   %85 = mul nsw i32 %83, %84
+  Operands
+  -   %9 = alloca i32, align 4
+  %84 = load i32, i32* %8, align 4
+  Uses
+  -   %85 = mul nsw i32 %83, %84
+  Operands
+  -   %8 = alloca i32, align 4
+  %85 = mul nsw i32 %83, %84
+  Uses
+  -   %87 = add nsw i32 %85, %86
+  Operands
+  -   %83 = load i32, i32* %9, align 4
+  -   %84 = load i32, i32* %8, align 4
+  %86 = load i32, i32* %10, align 4
+  Uses
+  -   %87 = add nsw i32 %85, %86
+  Operands
+  -   %10 = alloca i32, align 4
+  %87 = add nsw i32 %85, %86
+  Uses
+  -   %88 = sext i32 %87 to i64
+  Operands
+  -   %85 = mul nsw i32 %83, %84
+  -   %86 = load i32, i32* %10, align 4
+  %88 = sext i32 %87 to i64
+  Uses
+  -   %89 = getelementptr inbounds i32, i32* %82, i64 %88
+  Operands
+  -   %87 = add nsw i32 %85, %86
+  %89 = getelementptr inbounds i32, i32* %82, i64 %88
+  Uses
+  -   %90 = load i32, i32* %89, align 4
+  Operands
+  -   %82 = load i32*, i32** %5, align 8
+  -   %88 = sext i32 %87 to i64
+  %90 = load i32, i32* %89, align 4
+  Uses
+  -   %91 = icmp eq i32 %90, 0
+  Operands
+  -   %89 = getelementptr inbounds i32, i32* %82, i64 %88
+  %91 = icmp eq i32 %90, 0
+  Uses
+  -   br i1 %91, label %92, label %95
+  Operands
+  -   %90 = load i32, i32* %89, align 4
+  - i32 0
+  br i1 %91, label %92, label %95
+  Uses
+  Operands
+  -   %91 = icmp eq i32 %90, 0
+  - 
+  - 95:                                               ; preds = %92, %81
+  -   %96 = load i32*, i32** %5, align 8
+  -   %97 = load i32, i32* %9, align 4
+  -   %98 = load i32, i32* %8, align 4
+  -   %99 = mul nsw i32 %97, %98
+  -   %100 = load i32, i32* %10, align 4
+  -   %101 = add nsw i32 %99, %100
+  -   %102 = sext i32 %101 to i64
+  -   %103 = getelementptr inbounds i32, i32* %96, i64 %102
+  -   %104 = load i32, i32* %103, align 4
+  -   %105 = icmp eq i32 %104, 1
+  -   br i1 %105, label %106, label %112
+  - 
+  - 92:                                               ; preds = %81
+  -   %93 = load i32, i32* %11, align 4
+  -   %94 = icmp ne i32 %93, 3
+  -   br i1 %94, label %114, label %95
+  %93 = load i32, i32* %11, align 4
+  Uses
+  -   %94 = icmp ne i32 %93, 3
+  Operands
+  -   %11 = alloca i32, align 4
+  %94 = icmp ne i32 %93, 3
+  Uses
+  -   br i1 %94, label %114, label %95
+  Operands
+  -   %93 = load i32, i32* %11, align 4
+  - i32 3
+  br i1 %94, label %114, label %95
+  Uses
+  Operands
+  -   %94 = icmp ne i32 %93, 3
+  - 
+  - 95:                                               ; preds = %92, %81
+  -   %96 = load i32*, i32** %5, align 8
+  -   %97 = load i32, i32* %9, align 4
+  -   %98 = load i32, i32* %8, align 4
+  -   %99 = mul nsw i32 %97, %98
+  -   %100 = load i32, i32* %10, align 4
+  -   %101 = add nsw i32 %99, %100
+  -   %102 = sext i32 %101 to i64
+  -   %103 = getelementptr inbounds i32, i32* %96, i64 %102
+  -   %104 = load i32, i32* %103, align 4
+  -   %105 = icmp eq i32 %104, 1
+  -   br i1 %105, label %106, label %112
+  - 
+  - 114:                                              ; preds = %112, %92
+  -   %115 = phi i1 [ true, %92 ], [ %113, %112 ]
+  -   %116 = zext i1 %115 to i64
+  -   %117 = select i1 %115, i32 0, i32 1
+  -   %118 = load i32*, i32** %6, align 8
+  -   %119 = load i32, i32* %9, align 4
+  -   %120 = load i32, i32* %8, align 4
+  -   %121 = mul nsw i32 %119, %120
+  -   %122 = load i32, i32* %10, align 4
+  -   %123 = add nsw i32 %121, %122
+  -   %124 = sext i32 %123 to i64
+  -   %125 = getelementptr inbounds i32, i32* %118, i64 %124
+  -   store i32 %117, i32* %125, align 4
+  -   br label %126
+  %96 = load i32*, i32** %5, align 8
+  Uses
+  -   %103 = getelementptr inbounds i32, i32* %96, i64 %102
+  Operands
+  -   %5 = alloca i32*, align 8
+  %97 = load i32, i32* %9, align 4
+  Uses
+  -   %99 = mul nsw i32 %97, %98
+  Operands
+  -   %9 = alloca i32, align 4
+  %98 = load i32, i32* %8, align 4
+  Uses
+  -   %99 = mul nsw i32 %97, %98
+  Operands
+  -   %8 = alloca i32, align 4
+  %99 = mul nsw i32 %97, %98
+  Uses
+  -   %101 = add nsw i32 %99, %100
+  Operands
+  -   %97 = load i32, i32* %9, align 4
+  -   %98 = load i32, i32* %8, align 4
+  %100 = load i32, i32* %10, align 4
+  Uses
+  -   %101 = add nsw i32 %99, %100
+  Operands
+  -   %10 = alloca i32, align 4
+  %101 = add nsw i32 %99, %100
+  Uses
+  -   %102 = sext i32 %101 to i64
+  Operands
+  -   %99 = mul nsw i32 %97, %98
+  -   %100 = load i32, i32* %10, align 4
+  %102 = sext i32 %101 to i64
+  Uses
+  -   %103 = getelementptr inbounds i32, i32* %96, i64 %102
+  Operands
+  -   %101 = add nsw i32 %99, %100
+  %103 = getelementptr inbounds i32, i32* %96, i64 %102
+  Uses
+  -   %104 = load i32, i32* %103, align 4
+  Operands
+  -   %96 = load i32*, i32** %5, align 8
+  -   %102 = sext i32 %101 to i64
+  %104 = load i32, i32* %103, align 4
+  Uses
+  -   %105 = icmp eq i32 %104, 1
+  Operands
+  -   %103 = getelementptr inbounds i32, i32* %96, i64 %102
+  %105 = icmp eq i32 %104, 1
+  Uses
+  -   br i1 %105, label %106, label %112
+  Operands
+  -   %104 = load i32, i32* %103, align 4
+  - i32 1
+  br i1 %105, label %106, label %112
+  Uses
+  Operands
+  -   %105 = icmp eq i32 %104, 1
+  - 
+  - 112:                                              ; preds = %109, %106, %95
+  -   %113 = phi i1 [ false, %106 ], [ false, %95 ], [ %111, %109 ]
+  -   br label %114
+  - 
+  - 106:                                              ; preds = %95
+  -   %107 = load i32, i32* %11, align 4
+  -   %108 = icmp ne i32 %107, 2
+  -   br i1 %108, label %109, label %112
+  %107 = load i32, i32* %11, align 4
+  Uses
+  -   %108 = icmp ne i32 %107, 2
+  Operands
+  -   %11 = alloca i32, align 4
+  %108 = icmp ne i32 %107, 2
+  Uses
+  -   br i1 %108, label %109, label %112
+  Operands
+  -   %107 = load i32, i32* %11, align 4
+  - i32 2
+  br i1 %108, label %109, label %112
+  Uses
+  Operands
+  -   %108 = icmp ne i32 %107, 2
+  - 
+  - 112:                                              ; preds = %109, %106, %95
+  -   %113 = phi i1 [ false, %106 ], [ false, %95 ], [ %111, %109 ]
+  -   br label %114
+  - 
+  - 109:                                              ; preds = %106
+  -   %110 = load i32, i32* %11, align 4
+  -   %111 = icmp ne i32 %110, 3
+  -   br label %112
+  %110 = load i32, i32* %11, align 4
+  Uses
+  -   %111 = icmp ne i32 %110, 3
+  Operands
+  -   %11 = alloca i32, align 4
+  %111 = icmp ne i32 %110, 3
+  Uses
+  -   %113 = phi i1 [ false, %106 ], [ false, %95 ], [ %111, %109 ]
+  Operands
+  -   %110 = load i32, i32* %11, align 4
+  - i32 3
+  br label %112
+  Uses
+  Operands
+  - 
+  - 112:                                              ; preds = %109, %106, %95
+  -   %113 = phi i1 [ false, %106 ], [ false, %95 ], [ %111, %109 ]
+  -   br label %114
+  %113 = phi i1 [ false, %106 ], [ false, %95 ], [ %111, %109 ]
+  Uses
+  -   %115 = phi i1 [ true, %92 ], [ %113, %112 ]
+  Operands
+  - i1 false
+  - i1 false
+  -   %111 = icmp ne i32 %110, 3
+  br label %114
+  Uses
+  Operands
+  - 
+  - 114:                                              ; preds = %112, %92
+  -   %115 = phi i1 [ true, %92 ], [ %113, %112 ]
+  -   %116 = zext i1 %115 to i64
+  -   %117 = select i1 %115, i32 0, i32 1
+  -   %118 = load i32*, i32** %6, align 8
+  -   %119 = load i32, i32* %9, align 4
+  -   %120 = load i32, i32* %8, align 4
+  -   %121 = mul nsw i32 %119, %120
+  -   %122 = load i32, i32* %10, align 4
+  -   %123 = add nsw i32 %121, %122
+  -   %124 = sext i32 %123 to i64
+  -   %125 = getelementptr inbounds i32, i32* %118, i64 %124
+  -   store i32 %117, i32* %125, align 4
+  -   br label %126
+  %115 = phi i1 [ true, %92 ], [ %113, %112 ]
+  Uses
+  -   %117 = select i1 %115, i32 0, i32 1
+  -   %116 = zext i1 %115 to i64
+  Operands
+  - i1 true
+  -   %113 = phi i1 [ false, %106 ], [ false, %95 ], [ %111, %109 ]
+  %116 = zext i1 %115 to i64
+  Uses
+  Operands
+  -   %115 = phi i1 [ true, %92 ], [ %113, %112 ]
+  %117 = select i1 %115, i32 0, i32 1
+  Uses
+  -   store i32 %117, i32* %125, align 4
+  Operands
+  -   %115 = phi i1 [ true, %92 ], [ %113, %112 ]
+  - i32 0
+  - i32 1
+  %118 = load i32*, i32** %6, align 8
+  Uses
+  -   %125 = getelementptr inbounds i32, i32* %118, i64 %124
+  Operands
+  -   %6 = alloca i32*, align 8
+  %119 = load i32, i32* %9, align 4
+  Uses
+  -   %121 = mul nsw i32 %119, %120
+  Operands
+  -   %9 = alloca i32, align 4
+  %120 = load i32, i32* %8, align 4
+  Uses
+  -   %121 = mul nsw i32 %119, %120
+  Operands
+  -   %8 = alloca i32, align 4
+  %121 = mul nsw i32 %119, %120
+  Uses
+  -   %123 = add nsw i32 %121, %122
+  Operands
+  -   %119 = load i32, i32* %9, align 4
+  -   %120 = load i32, i32* %8, align 4
+  %122 = load i32, i32* %10, align 4
+  Uses
+  -   %123 = add nsw i32 %121, %122
+  Operands
+  -   %10 = alloca i32, align 4
+  %123 = add nsw i32 %121, %122
+  Uses
+  -   %124 = sext i32 %123 to i64
+  Operands
+  -   %121 = mul nsw i32 %119, %120
+  -   %122 = load i32, i32* %10, align 4
+  %124 = sext i32 %123 to i64
+  Uses
+  -   %125 = getelementptr inbounds i32, i32* %118, i64 %124
+  Operands
+  -   %123 = add nsw i32 %121, %122
+  %125 = getelementptr inbounds i32, i32* %118, i64 %124
+  Uses
+  -   store i32 %117, i32* %125, align 4
+  Operands
+  -   %118 = load i32*, i32** %6, align 8
+  -   %124 = sext i32 %123 to i64
+  store i32 %117, i32* %125, align 4
+  Uses
+  Operands
+  -   %117 = select i1 %115, i32 0, i32 1
+  -   %125 = getelementptr inbounds i32, i32* %118, i64 %124
+  br label %126
+  Uses
+  Operands
+  - 
+  - 126:                                              ; preds = %114
+  -   %127 = load i32, i32* %10, align 4
+  -   %128 = add nsw i32 %127, 1
+  -   store i32 %128, i32* %10, align 4
+  -   br label %21, !llvm.loop !9
+  %127 = load i32, i32* %10, align 4
+  Uses
+  -   %128 = add nsw i32 %127, 1
+  Operands
+  -   %10 = alloca i32, align 4
+  %128 = add nsw i32 %127, 1
+  Uses
+  -   store i32 %128, i32* %10, align 4
+  Operands
+  -   %127 = load i32, i32* %10, align 4
+  - i32 1
+  store i32 %128, i32* %10, align 4
+  Uses
+  Operands
+  -   %128 = add nsw i32 %127, 1
+  -   %10 = alloca i32, align 4
+  br label %21, !llvm.loop !9
+  Uses
+  Operands
+  - 
+  - 21:                                               ; preds = %126, %20
+  -   %22 = load i32, i32* %10, align 4
+  -   %23 = load i32, i32* %8, align 4
+  -   %24 = icmp slt i32 %22, %23
+  -   br i1 %24, label %25, label %129
+  br label %130
+  Uses
+  Operands
+  - 
+  - 130:                                              ; preds = %129
+  -   %131 = load i32, i32* %9, align 4
+  -   %132 = add nsw i32 %131, 1
+  -   store i32 %132, i32* %9, align 4
+  -   br label %16, !llvm.loop !10
+  %131 = load i32, i32* %9, align 4
+  Uses
+  -   %132 = add nsw i32 %131, 1
+  Operands
+  -   %9 = alloca i32, align 4
+  %132 = add nsw i32 %131, 1
+  Uses
+  -   store i32 %132, i32* %9, align 4
+  Operands
+  -   %131 = load i32, i32* %9, align 4
+  - i32 1
+  store i32 %132, i32* %9, align 4
+  Uses
+  Operands
+  -   %132 = add nsw i32 %131, 1
+  -   %9 = alloca i32, align 4
+  br label %16, !llvm.loop !10
+  Uses
+  Operands
+  - 
+  - 16:                                               ; preds = %130, %4
+  -   %17 = load i32, i32* %9, align 4
+  -   %18 = load i32, i32* %7, align 4
+  -   %19 = icmp slt i32 %17, %18
+  -   br i1 %19, label %20, label %133
+  ret void
+  Uses
+  Operands
+STATISTICS end for calc_next_gen
+
+ANALYSIS start for calc_next_gen
+Most frequent patterns (size=1)
+- Top 1 (1 times)
+    br i1 %19, label %20, label %133
+- Top 2 (1 times)
+    %91 = icmp eq i32 %90, 0
+- Top 3 (1 times)
+    %93 = load i32, i32* %11, align 4
+Most frequent patterns (size=2)
+- Top 1 (1 times)
+    %68 = load i32, i32* %67, align 4
+    %69 = icmp eq i32 %68, 1
+- Top 2 (1 times)
+    %86 = load i32, i32* %10, align 4
+    %87 = add nsw i32 %85, %86
+- Top 3 (1 times)
+    %85 = mul nsw i32 %83, %84
+    %86 = load i32, i32* %10, align 4
+Most frequent patterns (size=3)
+- Top 1 (1 times)
+    %65 = add nsw i32 %63, %64
+    %66 = sext i32 %65 to i64
+    %67 = getelementptr inbounds i32, i32* %60, i64 %66
+- Top 2 (1 times)
+    %80 = add nsw i32 %79, 1
+    store i32 %80, i32* %12, align 4
+    br label %26, !llvm.loop !8
+- Top 3 (1 times)
+    %8 = alloca i32, align 4
+    %9 = alloca i32, align 4
+    %10 = alloca i32, align 4
+Most frequent patterns (size=4)
+- Top 1 (1 times)
+    %66 = sext i32 %65 to i64
+    %67 = getelementptr inbounds i32, i32* %60, i64 %66
+    %68 = load i32, i32* %67, align 4
+    %69 = icmp eq i32 %68, 1
+- Top 2 (1 times)
+    %83 = load i32, i32* %9, align 4
+    %84 = load i32, i32* %8, align 4
+    %85 = mul nsw i32 %83, %84
+    %86 = load i32, i32* %10, align 4
+- Top 3 (1 times)
+    %82 = load i32*, i32** %5, align 8
+    %83 = load i32, i32* %9, align 4
+    %84 = load i32, i32* %8, align 4
+    %85 = mul nsw i32 %83, %84
+Most frequent patterns (size=5)
+- Top 1 (1 times)
+    %85 = mul nsw i32 %83, %84
+    %86 = load i32, i32* %10, align 4
+    %87 = add nsw i32 %85, %86
+    %88 = sext i32 %87 to i64
+    %89 = getelementptr inbounds i32, i32* %82, i64 %88
+- Top 2 (1 times)
+    %60 = load i32*, i32** %5, align 8
+    %61 = load i32, i32* %14, align 4
+    %62 = load i32, i32* %8, align 4
+    %63 = mul nsw i32 %61, %62
+    %64 = load i32, i32* %15, align 4
+- Top 3 (1 times)
+    %61 = load i32, i32* %14, align 4
+    %62 = load i32, i32* %8, align 4
+    %63 = mul nsw i32 %61, %62
+    %64 = load i32, i32* %15, align 4
+    %65 = add nsw i32 %63, %64
+ANALYSIS end for calc_next_gen
+
+STATISTICS start for display_gen
+  %4 = alloca i32*, align 8
+  Uses
+  -   %21 = load i32*, i32** %4, align 8
+  -   store i32* %0, i32** %4, align 8
+  Operands
+  - i32 1
+  %5 = alloca i32, align 4
+  Uses
+  -   %11 = load i32, i32* %5, align 4
+  -   store i32 %1, i32* %5, align 4
+  Operands
+  - i32 1
+  %6 = alloca i32, align 4
+  Uses
+  -   %23 = load i32, i32* %6, align 4
+  -   %16 = load i32, i32* %6, align 4
+  -   store i32 %2, i32* %6, align 4
+  Operands
+  - i32 1
+  %7 = alloca i32, align 4
+  Uses
+  -   store i32 %38, i32* %7, align 4
+  -   %37 = load i32, i32* %7, align 4
+  -   %22 = load i32, i32* %7, align 4
+  -   %19 = load i32, i32* %7, align 4
+  -   %10 = load i32, i32* %7, align 4
+  -   store i32 0, i32* %7, align 4
+  Operands
+  - i32 1
+  %8 = alloca i32, align 4
+  Uses
+  -   store i32 %34, i32* %8, align 4
+  -   %33 = load i32, i32* %8, align 4
+  -   %25 = load i32, i32* %8, align 4
+  -   %20 = load i32, i32* %8, align 4
+  -   %15 = load i32, i32* %8, align 4
+  -   store i32 0, i32* %8, align 4
+  Operands
+  - i32 1
+  store i32* %0, i32** %4, align 8
+  Uses
+  Operands
+  - i32* %0
+  -   %4 = alloca i32*, align 8
+  store i32 %1, i32* %5, align 4
+  Uses
+  Operands
+  - i32 %1
+  -   %5 = alloca i32, align 4
+  store i32 %2, i32* %6, align 4
+  Uses
+  Operands
+  - i32 %2
+  -   %6 = alloca i32, align 4
+  store i32 0, i32* %7, align 4
+  Uses
+  Operands
+  - i32 0
+  -   %7 = alloca i32, align 4
+  br label %9
+  Uses
+  Operands
+  - 
+  - 9:                                                ; preds = %36, %3
+  -   %10 = load i32, i32* %7, align 4
+  -   %11 = load i32, i32* %5, align 4
+  -   %12 = icmp slt i32 %10, %11
+  -   br i1 %12, label %13, label %39
+  %10 = load i32, i32* %7, align 4
+  Uses
+  -   %12 = icmp slt i32 %10, %11
+  Operands
+  -   %7 = alloca i32, align 4
+  %11 = load i32, i32* %5, align 4
+  Uses
+  -   %12 = icmp slt i32 %10, %11
+  Operands
+  -   %5 = alloca i32, align 4
+  %12 = icmp slt i32 %10, %11
+  Uses
+  -   br i1 %12, label %13, label %39
+  Operands
+  -   %10 = load i32, i32* %7, align 4
+  -   %11 = load i32, i32* %5, align 4
+  br i1 %12, label %13, label %39
+  Uses
+  Operands
+  -   %12 = icmp slt i32 %10, %11
+  - 
+  - 39:                                               ; preds = %9
+  -   call void @sim_flush()
+  -   ret void
+  - 
+  - 13:                                               ; preds = %9
+  -   store i32 0, i32* %8, align 4
+  -   br label %14
+  store i32 0, i32* %8, align 4
+  Uses
+  Operands
+  - i32 0
+  -   %8 = alloca i32, align 4
+  br label %14
+  Uses
+  Operands
+  - 
+  - 14:                                               ; preds = %32, %13
+  -   %15 = load i32, i32* %8, align 4
+  -   %16 = load i32, i32* %6, align 4
+  -   %17 = icmp slt i32 %15, %16
+  -   br i1 %17, label %18, label %35
+  %15 = load i32, i32* %8, align 4
+  Uses
+  -   %17 = icmp slt i32 %15, %16
+  Operands
+  -   %8 = alloca i32, align 4
+  %16 = load i32, i32* %6, align 4
+  Uses
+  -   %17 = icmp slt i32 %15, %16
+  Operands
+  -   %6 = alloca i32, align 4
+  %17 = icmp slt i32 %15, %16
+  Uses
+  -   br i1 %17, label %18, label %35
+  Operands
+  -   %15 = load i32, i32* %8, align 4
+  -   %16 = load i32, i32* %6, align 4
+  br i1 %17, label %18, label %35
+  Uses
+  Operands
+  -   %17 = icmp slt i32 %15, %16
+  - 
+  - 35:                                               ; preds = %14
+  -   br label %36
+  - 
+  - 18:                                               ; preds = %14
+  -   %19 = load i32, i32* %7, align 4
+  -   %20 = load i32, i32* %8, align 4
+  -   %21 = load i32*, i32** %4, align 8
+  -   %22 = load i32, i32* %7, align 4
+  -   %23 = load i32, i32* %6, align 4
+  -   %24 = mul nsw i32 %22, %23
+  -   %25 = load i32, i32* %8, align 4
+  -   %26 = add nsw i32 %24, %25
+  -   %27 = sext i32 %26 to i64
+  -   %28 = getelementptr inbounds i32, i32* %21, i64 %27
+  -   %29 = load i32, i32* %28, align 4
+  -   %30 = icmp eq i32 %29, 1
+  -   %31 = zext i1 %30 to i32
+  -   call void @sim_set_pixel(i32 noundef %19, i32 noundef %20, i32 noundef %31)
+  -   br label %32
+  %19 = load i32, i32* %7, align 4
+  Uses
+  -   call void @sim_set_pixel(i32 noundef %19, i32 noundef %20, i32 noundef %31)
+  Operands
+  -   %7 = alloca i32, align 4
+  %20 = load i32, i32* %8, align 4
+  Uses
+  -   call void @sim_set_pixel(i32 noundef %19, i32 noundef %20, i32 noundef %31)
+  Operands
+  -   %8 = alloca i32, align 4
+  %21 = load i32*, i32** %4, align 8
+  Uses
+  -   %28 = getelementptr inbounds i32, i32* %21, i64 %27
+  Operands
+  -   %4 = alloca i32*, align 8
+  %22 = load i32, i32* %7, align 4
+  Uses
+  -   %24 = mul nsw i32 %22, %23
+  Operands
+  -   %7 = alloca i32, align 4
+  %23 = load i32, i32* %6, align 4
+  Uses
+  -   %24 = mul nsw i32 %22, %23
+  Operands
+  -   %6 = alloca i32, align 4
+  %24 = mul nsw i32 %22, %23
+  Uses
+  -   %26 = add nsw i32 %24, %25
+  Operands
+  -   %22 = load i32, i32* %7, align 4
+  -   %23 = load i32, i32* %6, align 4
+  %25 = load i32, i32* %8, align 4
+  Uses
+  -   %26 = add nsw i32 %24, %25
+  Operands
+  -   %8 = alloca i32, align 4
+  %26 = add nsw i32 %24, %25
+  Uses
+  -   %27 = sext i32 %26 to i64
+  Operands
+  -   %24 = mul nsw i32 %22, %23
+  -   %25 = load i32, i32* %8, align 4
+  %27 = sext i32 %26 to i64
+  Uses
+  -   %28 = getelementptr inbounds i32, i32* %21, i64 %27
+  Operands
+  -   %26 = add nsw i32 %24, %25
+  %28 = getelementptr inbounds i32, i32* %21, i64 %27
+  Uses
+  -   %29 = load i32, i32* %28, align 4
+  Operands
+  -   %21 = load i32*, i32** %4, align 8
+  -   %27 = sext i32 %26 to i64
+  %29 = load i32, i32* %28, align 4
+  Uses
+  -   %30 = icmp eq i32 %29, 1
+  Operands
+  -   %28 = getelementptr inbounds i32, i32* %21, i64 %27
+  %30 = icmp eq i32 %29, 1
+  Uses
+  -   %31 = zext i1 %30 to i32
+  Operands
+  -   %29 = load i32, i32* %28, align 4
+  - i32 1
+  %31 = zext i1 %30 to i32
+  Uses
+  -   call void @sim_set_pixel(i32 noundef %19, i32 noundef %20, i32 noundef %31)
+  Operands
+  -   %30 = icmp eq i32 %29, 1
+  call void @sim_set_pixel(i32 noundef %19, i32 noundef %20, i32 noundef %31)
+  Uses
+  Operands
+  -   %19 = load i32, i32* %7, align 4
+  -   %20 = load i32, i32* %8, align 4
+  -   %31 = zext i1 %30 to i32
+  - declare void @sim_set_pixel(i32 noundef %0, i32 noundef %1, i32 noundef %2) #1
+  br label %32
+  Uses
+  Operands
+  - 
+  - 32:                                               ; preds = %18
+  -   %33 = load i32, i32* %8, align 4
+  -   %34 = add nsw i32 %33, 1
+  -   store i32 %34, i32* %8, align 4
+  -   br label %14, !llvm.loop !6
+  %33 = load i32, i32* %8, align 4
+  Uses
+  -   %34 = add nsw i32 %33, 1
+  Operands
+  -   %8 = alloca i32, align 4
+  %34 = add nsw i32 %33, 1
+  Uses
+  -   store i32 %34, i32* %8, align 4
+  Operands
+  -   %33 = load i32, i32* %8, align 4
+  - i32 1
+  store i32 %34, i32* %8, align 4
+  Uses
+  Operands
+  -   %34 = add nsw i32 %33, 1
+  -   %8 = alloca i32, align 4
+  br label %14, !llvm.loop !6
+  Uses
+  Operands
+  - 
+  - 14:                                               ; preds = %32, %13
+  -   %15 = load i32, i32* %8, align 4
+  -   %16 = load i32, i32* %6, align 4
+  -   %17 = icmp slt i32 %15, %16
+  -   br i1 %17, label %18, label %35
+  br label %36
+  Uses
+  Operands
+  - 
+  - 36:                                               ; preds = %35
+  -   %37 = load i32, i32* %7, align 4
+  -   %38 = add nsw i32 %37, 1
+  -   store i32 %38, i32* %7, align 4
+  -   br label %9, !llvm.loop !8
+  %37 = load i32, i32* %7, align 4
+  Uses
+  -   %38 = add nsw i32 %37, 1
+  Operands
+  -   %7 = alloca i32, align 4
+  %38 = add nsw i32 %37, 1
+  Uses
+  -   store i32 %38, i32* %7, align 4
+  Operands
+  -   %37 = load i32, i32* %7, align 4
+  - i32 1
+  store i32 %38, i32* %7, align 4
+  Uses
+  Operands
+  -   %38 = add nsw i32 %37, 1
+  -   %7 = alloca i32, align 4
+  br label %9, !llvm.loop !8
+  Uses
+  Operands
+  - 
+  - 9:                                                ; preds = %36, %3
+  -   %10 = load i32, i32* %7, align 4
+  -   %11 = load i32, i32* %5, align 4
+  -   %12 = icmp slt i32 %10, %11
+  -   br i1 %12, label %13, label %39
+  call void @sim_flush()
+  Uses
+  Operands
+  - declare void @sim_flush() #1
+  ret void
+  Uses
+  Operands
+STATISTICS end for display_gen
+
+ANALYSIS start for display_gen
+Most frequent patterns (size=1)
+- Top 1 (1 times)
+    br label %9, !llvm.loop !8
+- Top 2 (1 times)
+    %5 = alloca i32, align 4
+- Top 3 (1 times)
+    %6 = alloca i32, align 4
+Most frequent patterns (size=2)
+- Top 1 (1 times)
+    call void @sim_flush()
+    ret void
+- Top 2 (1 times)
+    %33 = load i32, i32* %8, align 4
+    %34 = add nsw i32 %33, 1
+- Top 3 (1 times)
+    %34 = add nsw i32 %33, 1
+    store i32 %34, i32* %8, align 4
+Most frequent patterns (size=3)
+- Top 1 (1 times)
+    %29 = load i32, i32* %28, align 4
+    %30 = icmp eq i32 %29, 1
+    %31 = zext i1 %30 to i32
+- Top 2 (1 times)
+    store i32* %0, i32** %4, align 8
+    store i32 %1, i32* %5, align 4
+    store i32 %2, i32* %6, align 4
+- Top 3 (1 times)
+    store i32 %2, i32* %6, align 4
+    store i32 0, i32* %7, align 4
+    br label %9
+Most frequent patterns (size=4)
+- Top 1 (1 times)
+    %28 = getelementptr inbounds i32, i32* %21, i64 %27
+    %29 = load i32, i32* %28, align 4
+    %30 = icmp eq i32 %29, 1
+    %31 = zext i1 %30 to i32
+- Top 2 (1 times)
+    store i32* %0, i32** %4, align 8
+    store i32 %1, i32* %5, align 4
+    store i32 %2, i32* %6, align 4
+    store i32 0, i32* %7, align 4
+- Top 3 (1 times)
+    store i32 %1, i32* %5, align 4
+    store i32 %2, i32* %6, align 4
+    store i32 0, i32* %7, align 4
+    br label %9
+Most frequent patterns (size=5)
+- Top 1 (1 times)
+    %27 = sext i32 %26 to i64
+    %28 = getelementptr inbounds i32, i32* %21, i64 %27
+    %29 = load i32, i32* %28, align 4
+    %30 = icmp eq i32 %29, 1
+    %31 = zext i1 %30 to i32
+- Top 2 (1 times)
+    store i32* %0, i32** %4, align 8
+    store i32 %1, i32* %5, align 4
+    store i32 %2, i32* %6, align 4
+    store i32 0, i32* %7, align 4
+    br label %9
+- Top 3 (1 times)
+    %8 = alloca i32, align 4
+    store i32* %0, i32** %4, align 8
+    store i32 %1, i32* %5, align 4
+    store i32 %2, i32* %6, align 4
+    store i32 0, i32* %7, align 4
+ANALYSIS end for display_gen
+
+ANALYSIS start for GLOBAL
+Most frequent patterns (size=1)
+- Top 1 (4 times)
+    ret void
+- Top 2 (3 times)
+    %8 = alloca i32, align 4
+- Top 3 (3 times)
+    %5 = alloca i32*, align 8
+Most frequent patterns (size=2)
+- Top 1 (3 times)
+    %7 = alloca i32, align 4
+    %8 = alloca i32, align 4
+- Top 2 (2 times)
+    store i32 %3, i32* %8, align 4
+    store i32 0, i32* %9, align 4
+- Top 3 (2 times)
+    %18 = load i32, i32* %7, align 4
+    %19 = icmp slt i32 %17, %18
+Most frequent patterns (size=3)
+- Top 1 (2 times)
+    %8 = alloca i32, align 4
+    %9 = alloca i32, align 4
+    %10 = alloca i32, align 4
+- Top 2 (2 times)
+    %7 = alloca i32, align 4
+    %8 = alloca i32, align 4
+    %9 = alloca i32, align 4
+- Top 3 (2 times)
+    %6 = alloca i32, align 4
+    %7 = alloca i32, align 4
+    %8 = alloca i32, align 4
+Most frequent patterns (size=4)
+- Top 1 (2 times)
+    %7 = alloca i32, align 4
+    %8 = alloca i32, align 4
+    %9 = alloca i32, align 4
+    %10 = alloca i32, align 4
+- Top 2 (1 times)
+    %66 = sext i32 %65 to i64
+    %67 = getelementptr inbounds i32, i32* %60, i64 %66
+    %68 = load i32, i32* %67, align 4
+    %69 = icmp eq i32 %68, 1
+- Top 3 (1 times)
+    %6 = alloca i32, align 4
+    %7 = alloca i32, align 4
+    %8 = alloca i32, align 4
+    store i32* %0, i32** %4, align 8
+Most frequent patterns (size=5)
+- Top 1 (1 times)
+    %6 = alloca i32, align 4
+    %7 = alloca i32, align 4
+    %8 = alloca i32, align 4
+    store i32* %0, i32** %4, align 8
+    store i32 %1, i32* %5, align 4
+- Top 2 (1 times)
+    %7 = getelementptr inbounds [5000 x i32], [5000 x i32]* %2, i64 0, i64 0
+    store i32* %7, i32** %4, align 8
+    %8 = load i32*, i32** %3, align 8
+    call void @init_gen(i32* noundef %8, i32 noundef 100, i32 noundef 50, i32 noundef 4)
+    br label %9
+- Top 3 (1 times)
+    %7 = alloca i32, align 4
+    %8 = alloca i32, align 4
+    store i32* %0, i32** %4, align 8
+    store i32 %1, i32* %5, align 4
+    store i32 %2, i32* %6, align 4
+ANALYSIS end for GLOBAL
+
