@@ -1,0 +1,70 @@
+Most frequent patterns (size=1)
+- Top 1 (10747126 times)
+  "calc_next_gen": RUN "load"
+- Top 2 (6426853 times)
+  "calc_next_gen": RUN "br"
+- Top 3 (4265990 times)
+  "calc_next_gen": RUN "icmp"
+
+Most frequent patterns (size=2)
+- Top 1 (4605406 times)
+  "calc_next_gen": RUN "br"
+  "calc_next_gen": RUN "load"
+- Top 2 (4265990 times)
+  "calc_next_gen": RUN "icmp"
+  "calc_next_gen": RUN "br"
+- Top 3 (4265990 times)
+  "calc_next_gen": RUN "load"
+  "calc_next_gen": RUN "icmp"
+
+Most frequent patterns (size=3)
+- Top 1 (4265990 times)
+  "calc_next_gen": RUN "load"
+  "calc_next_gen": RUN "icmp"
+  "calc_next_gen": RUN "br"
+- Top 2 (2741794 times)
+  "calc_next_gen": RUN "icmp"
+  "calc_next_gen": RUN "br"
+  "calc_next_gen": RUN "load"
+- Top 3 (2165483 times)
+  "calc_next_gen": RUN "br"
+  "calc_next_gen": RUN "load"
+  "calc_next_gen": RUN "icmp"
+
+Most frequent patterns (size=4)
+- Top 1 (2741794 times)
+  "calc_next_gen": RUN "load"
+  "calc_next_gen": RUN "icmp"
+  "calc_next_gen": RUN "br"
+  "calc_next_gen": RUN "load"
+- Top 2 (2165483 times)
+  "calc_next_gen": RUN "br"
+  "calc_next_gen": RUN "load"
+  "calc_next_gen": RUN "icmp"
+  "calc_next_gen": RUN "br"
+- Top 3 (1438095 times)
+  "calc_next_gen": RUN "icmp"
+  "calc_next_gen": RUN "br"
+  "calc_next_gen": RUN "load"
+  "calc_next_gen": RUN "load"
+
+Most frequent patterns (size=5)
+- Top 1 (1438095 times)
+  "calc_next_gen": RUN "load"
+  "calc_next_gen": RUN "icmp"
+  "calc_next_gen": RUN "br"
+  "calc_next_gen": RUN "load"
+  "calc_next_gen": RUN "load"
+- Top 2 (1205483 times)
+  "calc_next_gen": RUN "load"
+  "calc_next_gen": RUN "icmp"
+  "calc_next_gen": RUN "br"
+  "calc_next_gen": RUN "load"
+  "calc_next_gen": RUN "icmp"
+- Top 3 (1205483 times)
+  "calc_next_gen": RUN "icmp"
+  "calc_next_gen": RUN "br"
+  "calc_next_gen": RUN "load"
+  "calc_next_gen": RUN "icmp"
+  "calc_next_gen": RUN "br"
+
