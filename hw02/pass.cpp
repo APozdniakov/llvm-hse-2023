@@ -106,6 +106,6 @@ static void registerPatternAnalyzerPass(
 }
 
 static llvm::RegisterStandardPasses RegisterPatternAnalyzerPass(
-    llvm::PassManagerBuilder::EP_EarlyAsPossible,
+    llvm::PassManagerBuilder::EP_OptimizerLast,
     registerPatternAnalyzerPass
 );
